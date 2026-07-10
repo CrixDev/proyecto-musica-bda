@@ -10,28 +10,34 @@ import org.bson.types.ObjectId;
  */
 public class SesionActual {
 
-    private Usuario usuario;
+    // 1. El atributo debe ser estático para que persista durante toda la ejecución de la app
+    private static Usuario usuario;
 
-    public void iniciar(Usuario usuario) {
-        this.usuario = usuario;
+    // Constructor privado para evitar que alguien intente hacer un: new SesionActual()
+    private SesionActual() {}
+
+    // 2. Volver los métodos estáticos para poder llamarlos como SesionActual.iniciar(...)
+    public static void iniciar(Usuario usuarioLogueado) {
+        usuario = usuarioLogueado;
     }
 
-    public void cerrar() {
-        this.usuario = null;
+    public static void cerrar() {
+        usuario = null;
     }
 
-    public boolean hayUsuario() {
+    public static boolean hayUsuario() {
         return usuario != null;
     }
 
-    public Usuario getUsuario() {
+    public static Usuario getUsuario() {
         if (usuario == null) {
-            throw new NegocioException("No hay una sesion activa");
+            // Lanza tu excepción personalizada si intentan acceder al usuario sin haber hecho login
+            throw new NegocioException("No hay una sesión activa en el sistema.");
         }
         return usuario;
     }
 
-    public ObjectId getUsuarioId() {
+    public static ObjectId getUsuarioId() {
         return getUsuario().getId();
     }
 }

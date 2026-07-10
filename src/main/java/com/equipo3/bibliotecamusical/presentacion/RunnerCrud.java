@@ -42,7 +42,7 @@ public final class RunnerCrud {
         UsuarioDTO usuario = servicios.autenticacion().registrar(new RegistroUsuarioDTO(
                 nombreUsuario, nombreUsuario + "@bm3.com", "secreta123", "secreta123", null));
         System.out.println("[OK] Usuario registrado: " + usuario.nombreUsuario() + " (id=" + usuario.id() + ")");
-        UsuarioDTO logueado = servicios.autenticacion().iniciarSesion(
+        UsuarioDTO logueado = servicios.autenticacion().login(
                 new CredencialesDTO(nombreUsuario, "secreta123"));
         System.out.println("[OK] Login correcto (bcrypt) para: " + logueado.correo());
 
@@ -80,7 +80,7 @@ public final class RunnerCrud {
                 + servicios.albumes().listarPorArtista(banda.id()).size());
 
         // 7) Limpieza del usuario de demo
-        servicios.autenticacion().cerrarSesion();
+        servicios.autenticacion().logout();
         ConexionMongo.getBaseDatos().getCollection("usuarios")
                 .deleteOne(new org.bson.Document("nombreUsuario", nombreUsuario));
         System.out.println("\n=== DEMO COMPLETADA CORRECTAMENTE ===");

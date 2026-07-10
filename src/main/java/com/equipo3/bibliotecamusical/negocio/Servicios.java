@@ -20,7 +20,6 @@ import com.mongodb.client.MongoDatabase;
  */
 public class Servicios {
 
-    private final SesionActual sesion;
     private final AutenticacionService autenticacion;
     private final UsuarioService usuarios;
     private final ArtistaService artistas;
@@ -31,17 +30,14 @@ public class Servicios {
         IArtistaDAO artistaDAO = new ArtistaDAOImpl(db);
         IAlbumDAO albumDAO = new AlbumDAOImpl(db);
 
-        this.sesion = new SesionActual();
-        this.autenticacion = new AutenticacionService(usuarioDAO, sesion);
+        
+        this.autenticacion = new AutenticacionService(usuarioDAO);
         this.usuarios = new UsuarioService(usuarioDAO);
         this.artistas = new ArtistaService(artistaDAO, albumDAO);
         this.albumes = new AlbumService(albumDAO, artistaDAO);
     }
 
-    public SesionActual sesion() {
-        return sesion;
-    }
-
+   
     public AutenticacionService autenticacion() {
         return autenticacion;
     }

@@ -16,6 +16,7 @@ import com.equipo3.bibliotecamusical.entidades.TipoArtista;
 import com.equipo3.bibliotecamusical.negocio.excepciones.AutenticacionException;
 import com.equipo3.bibliotecamusical.negocio.excepciones.DuplicadoException;
 import com.equipo3.bibliotecamusical.negocio.excepciones.ValidacionException;
+import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
 import com.equipo3.bibliotecamusical.persistencia.ConexionMongo;
 import com.equipo3.bibliotecamusical.persistencia.InicializadorBd;
 import com.mongodb.client.MongoDatabase;
@@ -58,12 +59,12 @@ class ServiciosNegocioTest {
         assertEquals("ana_negocio", creado.nombreUsuario());
 
         UsuarioDTO login = servicios.autenticacion()
-                .iniciarSesion(new CredencialesDTO("ana@bm3.com", "clave123"));
-        assertTrue(servicios.sesion().hayUsuario());
+                .login(new CredencialesDTO("ana@bm3.com", "clave123"));
+        assertTrue(SesionActual.hayUsuario());
         assertEquals("ana_negocio", login.nombreUsuario());
 
         assertThrows(AutenticacionException.class, () -> servicios.autenticacion()
-                .iniciarSesion(new CredencialesDTO("ana_negocio", "incorrecta")));
+                .login(new CredencialesDTO("ana_negocio", "incorrecta")));
         assertThrows(DuplicadoException.class, () -> servicios.autenticacion().registrar(dto));
     }
 
