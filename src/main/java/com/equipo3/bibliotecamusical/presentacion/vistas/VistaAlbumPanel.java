@@ -7,12 +7,15 @@ package com.equipo3.bibliotecamusical.presentacion.vistas;
 import com.equipo3.bibliotecamusical.dtos.AlbumDTO;
 import com.equipo3.bibliotecamusical.dtos.ArtistaDTO;
 import com.equipo3.bibliotecamusical.dtos.CancionDTO;
+import com.equipo3.bibliotecamusical.entidades.TipoFavorito;
 import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.negocio.excepciones.NegocioException;
+import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BotonFavorito;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BotonPildora;
 import com.equipo3.bibliotecamusical.presentacion.componentes.EtiquetaBadge;
 import com.equipo3.bibliotecamusical.presentacion.componentes.PanelDegradado;
+import com.equipo3.bibliotecamusical.presentacion.componentes.ReproductorSimulado;
 import com.equipo3.bibliotecamusical.presentacion.estilo.Estilos;
 import com.equipo3.bibliotecamusical.presentacion.estilo.Formato;
 import com.equipo3.bibliotecamusical.presentacion.estilo.Imagenes;
@@ -56,6 +59,7 @@ public class VistaAlbumPanel extends JPanel {
     private final NavegacionVistas navegacion;
 
     private final JPanel contenedorPrincipal = new JPanel(new BorderLayout());
+    private final ReproductorSimulado reproductor = new ReproductorSimulado();
     private Runnable alReproducir = () -> {
     };
 
@@ -71,6 +75,9 @@ public class VistaAlbumPanel extends JPanel {
         scroll.getVerticalScrollBar().setUnitIncrement(16);
         scroll.getViewport().setBackground(Estilos.FONDO);
         add(scroll, BorderLayout.CENTER);
+
+        // Barra inferior del reproductor simulado (oculta hasta que se reproduce).
+        add(reproductor, BorderLayout.SOUTH);
     }
 
     /**
@@ -103,6 +110,7 @@ public class VistaAlbumPanel extends JPanel {
      * para pruebas/demo sin Mongo.
      */
     public void mostrar(AlbumDTO album, ArtistaDTO artista) {
+        reproductor.detener(); // al cambiar de álbum se detiene lo que estuviera sonando
         contenedorPrincipal.removeAll();
         contenedorPrincipal.add(construirBanner(album, artista), BorderLayout.NORTH);
         contenedorPrincipal.add(construirListaCanciones(album, artista), BorderLayout.CENTER);
@@ -184,8 +192,16 @@ public class VistaAlbumPanel extends JPanel {
         acciones.setOpaque(false);
         acciones.setAlignmentX(Component.LEFT_ALIGNMENT);
         BotonPildora reproducir = new BotonPildora("\u25B6  Reproducir", true);
-        reproducir.addActionListener(e -> alReproducir.run());
-        BotonFavorito favorito = new BotonFavorito(false);
+        reproducir.addActionListener(e -> {
+            alReproducir.run();
+            if (album.canciones() != null && !album.canciones().isEmpty()) {
+                CancionDTO primera = album.canciones().get(0);
+                reproductor.reproducir(primera.nombre(), artista.nombre(), primera.duracionSegundos());
+            }
+        });
+        BotonFavorito favorito = new BotonFavorito(esFavorito(TipoFavorito.ALBUM, album.id()));
+        favorito.alCambiar(nuevo -> alternarFavorito(
+                TipoFavorito.ALBUM, album.id(), null, album.genero(), nuevo, favorito));
         acciones.add(reproducir);
         acciones.add(favorito);
         textos.add(acciones);
@@ -208,7 +224,7 @@ public class VistaAlbumPanel extends JPanel {
 
         List<CancionDTO> canciones = album.canciones();
         for (CancionDTO cancion : canciones) {
-            seccion.add(filaCancion(cancion, artista.nombre()));
+            seccion.add(filaCancion(cancion, artista.nombre(), album.id(), album.genero()));
             seccion.add(lineaSeparadora());
         }
         return seccion;
@@ -246,7 +262,7 @@ public class VistaAlbumPanel extends JPanel {
         return label;
     }
 
-    private JPanel filaCancion(CancionDTO cancion, String nombreArtista) {
+    private JPanel filaCancion(CancionDTO cancion, String nombreArtista, String albumId, String generoAlbum) {
         JPanel fila = new JPanel(new BorderLayout());
         fila.setOpaque(false);
         fila.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -273,9 +289,16 @@ public class VistaAlbumPanel extends JPanel {
         JLabel duracion = new JLabel(Formato.duracion(cancion.duracionSegundos()));
         duracion.setFont(Estilos.TEXTO_NORMAL);
         duracion.setForeground(Estilos.TEXTO_SECUNDARIO);
-        BotonFavorito favorito = new BotonFavorito(false);
+        String generoCancion = cancion.genero() != null ? cancion.genero() : generoAlbum;
+        JButton play = botonPlay();
+        play.addActionListener(e -> reproductor.reproducir(
+                cancion.nombre(), nombreArtista, cancion.duracionSegundos()));
+        BotonFavorito favorito = new BotonFavorito(esFavorito(TipoFavorito.CANCION, cancion.id()));
+        favorito.alCambiar(nuevo -> alternarFavorito(
+                TipoFavorito.CANCION, cancion.id(), albumId, generoCancion, nuevo, favorito));
         derecha.add(artistaLabel);
         derecha.add(duracion);
+        derecha.add(play);
         derecha.add(favorito);
 
         fila.add(izquierda, BorderLayout.WEST);
@@ -290,6 +313,45 @@ public class VistaAlbumPanel extends JPanel {
         linea.setMaximumSize(new Dimension(Integer.MAX_VALUE, 1));
         linea.setAlignmentX(Component.LEFT_ALIGNMENT);
         return linea;
+    }
+
+    private JButton botonPlay() {
+        JButton b = new JButton("▶");
+        b.setFont(Estilos.TEXTO_NORMAL);
+        b.setForeground(Estilos.ACENTO_TEAL_OSCURO);
+        b.setContentAreaFilled(false);
+        b.setBorder(BorderFactory.createEmptyBorder(0, 6, 0, 6));
+        b.setFocusPainted(false);
+        b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        b.setToolTipText("Reproducir (simulado)");
+        return b;
+    }
+
+    // ---------------------------------------------------------- favoritos
+
+    private boolean esFavorito(TipoFavorito tipo, String refId) {
+        if (servicios == null || !SesionActual.hayUsuario() || refId == null) {
+            return false;
+        }
+        try {
+            return servicios.favoritos().esFavorito(
+                    SesionActual.getUsuarioId().toHexString(), tipo, refId);
+        } catch (NegocioException e) {
+            return false;
+        }
+    }
+
+    private void alternarFavorito(TipoFavorito tipo, String refId, String albumId,
+            String genero, boolean deseado, BotonFavorito boton) {
+        if (servicios == null || !SesionActual.hayUsuario()) {
+            return;
+        }
+        try {
+            servicios.favoritos().alternar(SesionActual.getUsuarioId().toHexString(),
+                    tipo, refId, albumId, genero, deseado);
+        } catch (NegocioException e) {
+            boton.setActivo(!deseado);
+        }
     }
 
     private JPanel mensajeError(String mensaje) {

@@ -6,8 +6,12 @@ import com.equipo3.bibliotecamusical.negocio.servicios.OrdenBusqueda;
 import com.equipo3.bibliotecamusical.negocio.servicios.TipoContenido;
 import com.equipo3.bibliotecamusical.presentacion.estilo.Estilos;
 import java.awt.Component;
+import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.IllegalComponentStateException;
+import java.awt.Point;
+import java.awt.Window;
 import java.util.List;
 import java.util.function.Consumer;
 import javax.swing.BorderFactory;
@@ -15,15 +19,17 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
+import javax.swing.SwingUtilities;
 
 /**
- * Popup de filtros del buscador: tipo de contenido (solo artistas/albumes/
- * canciones), orden, anio y genero. Al aplicar, entrega unos
- * {@link CriteriosBusqueda} (sin texto; la pantalla que lo invoca conserva su
- * propio texto de busqueda).
+ * Diálogo de filtros del buscador: tipo de contenido (solo artistas/álbumes/
+ * canciones), orden, año y género. Se usa un {@link JDialog} <b>modal</b> (no un
+ * popup) para que al interactuar con los combos el panel no se cierre; solo se
+ * cierra al pulsar "Aplicar" o "Limpiar". Al aplicar entrega unos
+ * {@link CriteriosBusqueda} (sin texto; la pantalla conserva su propio texto).
  */
 public final class PanelFiltros {
 
@@ -33,13 +39,13 @@ public final class PanelFiltros {
     }
 
     /**
-     * Construye y muestra el popup de filtros anclado a {@code ancla}.
+     * Construye y muestra el diálogo de filtros anclado a {@code ancla}.
      *
-     * @param ancla             componente bajo el cual se despliega el popup.
+     * @param ancla             componente bajo el cual se posiciona el diálogo.
      * @param actuales          criterios actuales, para preseleccionar los combos.
-     * @param aniosDisponibles  anios presentes en los datos (para el combo de anio).
+     * @param aniosDisponibles  años presentes en los datos (para el combo de año).
      * @param permitirTipo      si {@code true} se muestra el combo de tipo de contenido.
-     * @param alAplicar         callback con los nuevos criterios (texto vacio).
+     * @param alAplicar         callback con los nuevos criterios (texto vacío).
      */
     public static void mostrar(Component ancla, CriteriosBusqueda actuales,
             List<Integer> aniosDisponibles, boolean permitirTipo,
@@ -47,13 +53,21 @@ public final class PanelFiltros {
 
         CriteriosBusqueda base = actuales != null ? actuales : CriteriosBusqueda.vacio();
 
-        JPopupMenu popup = new JPopupMenu();
-        popup.setBorder(BorderFactory.createLineBorder(Estilos.BORDE, 1));
+        Window owner = SwingUtilities.getWindowAncestor(ancla);
+        JDialog dialog = new JDialog(owner, "Filtros", Dialog.ModalityType.APPLICATION_MODAL);
+        dialog.setResizable(false);
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setBackground(Estilos.FONDO);
-        panel.setBorder(BorderFactory.createEmptyBorder(14, 16, 14, 16));
+        panel.setBorder(BorderFactory.createEmptyBorder(16, 18, 16, 18));
+
+        JLabel titulo = new JLabel("Filtros");
+        titulo.setFont(Estilos.TITULO_MEDIANO);
+        titulo.setForeground(Estilos.TEXTO_PRIMARIO);
+        titulo.setAlignmentX(Component.LEFT_ALIGNMENT);
+        panel.add(titulo);
+        panel.add(Box.createVerticalStrut(12));
 
         JComboBox<TipoContenido> comboTipo = new JComboBox<>(TipoContenido.values());
         comboTipo.setSelectedItem(base.tipo() != null ? base.tipo() : TipoContenido.TODOS);
@@ -85,7 +99,7 @@ public final class PanelFiltros {
         }
         comboGenero.setSelectedItem(base.genero() != null && !base.genero().isBlank() ? base.genero() : TODOS);
         panel.add(fila("Género", comboGenero));
-        panel.add(Box.createVerticalStrut(14));
+        panel.add(Box.createVerticalStrut(16));
 
         JPanel botones = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
         botones.setOpaque(false);
@@ -95,7 +109,7 @@ public final class PanelFiltros {
         JButton limpiar = new JButton("Limpiar");
         limpiar.setFocusPainted(false);
         limpiar.addActionListener(e -> {
-            popup.setVisible(false);
+            dialog.dispose();
             alAplicar.accept(new CriteriosBusqueda(
                     "",
                     permitirTipo ? TipoContenido.TODOS : base.tipo(),
@@ -104,7 +118,7 @@ public final class PanelFiltros {
 
         BotonPildora aplicar = new BotonPildora("Aplicar", true);
         aplicar.addActionListener(e -> {
-            popup.setVisible(false);
+            dialog.dispose();
             TipoContenido tipo = permitirTipo ? (TipoContenido) comboTipo.getSelectedItem() : base.tipo();
             OrdenBusqueda orden = (OrdenBusqueda) comboOrden.getSelectedItem();
             String anioSel = (String) comboAnio.getSelectedItem();
@@ -118,8 +132,21 @@ public final class PanelFiltros {
         botones.add(aplicar);
         panel.add(botones);
 
-        popup.add(panel);
-        popup.show(ancla, 0, ancla.getHeight() + 4);
+        dialog.setContentPane(panel);
+        dialog.pack();
+        ubicarBajoAncla(dialog, ancla, owner);
+        dialog.setVisible(true); // modal: se queda abierto hasta Aplicar/Limpiar/cerrar
+    }
+
+    private static void ubicarBajoAncla(JDialog dialog, Component ancla, Window owner) {
+        try {
+            Point p = ancla.getLocationOnScreen();
+            int x = p.x + ancla.getWidth() - dialog.getWidth();
+            int y = p.y + ancla.getHeight() + 4;
+            dialog.setLocation(Math.max(0, x), Math.max(0, y));
+        } catch (IllegalComponentStateException e) {
+            dialog.setLocationRelativeTo(owner);
+        }
     }
 
     private static JPanel fila(String etiqueta, JComboBox<?> combo) {
@@ -139,8 +166,8 @@ public final class PanelFiltros {
 
         combo.setFont(Estilos.TEXTO_NORMAL);
         combo.setFocusable(false);
-        combo.setMaximumSize(new Dimension(200, 28));
-        combo.setPreferredSize(new Dimension(200, 28));
+        combo.setMaximumSize(new Dimension(210, 28));
+        combo.setPreferredSize(new Dimension(210, 28));
         fila.add(combo);
         return fila;
     }

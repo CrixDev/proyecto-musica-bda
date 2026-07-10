@@ -11,12 +11,16 @@ import com.equipo3.bibliotecamusical.entidades.Artista;
 import com.equipo3.bibliotecamusical.entidades.Cancion;
 import com.equipo3.bibliotecamusical.negocio.mapeadores.AlbumMapper;
 import com.equipo3.bibliotecamusical.negocio.mapeadores.ArtistaMapper;
+import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Buscador global de la biblioteca. Es el corazon de las tres pantallas de
@@ -62,6 +66,9 @@ public class BusquedaService {
         boolean quiereAlbumes = tipo == TipoContenido.TODOS || tipo == TipoContenido.ALBUM;
         boolean quiereCanciones = tipo == TipoContenido.TODOS || tipo == TipoContenido.CANCION;
 
+        // Géneros no deseados del usuario en sesión: sus resultados se ocultan.
+        Set<String> bloqueados = generosBloqueados();
+
         // Mapa auxiliar para resolver nombre/imagen del artista dueño de cada album.
         Map<String, Artista> artistasPorId = new HashMap<>();
         for (Artista a : artistaDAO.listar()) {
@@ -79,6 +86,9 @@ public class BusquedaService {
                     ? new ArrayList<>(artistasPorId.values())
                     : artistaDAO.buscarPorTexto(texto);
             for (Artista a : encontrados) {
+                if (bloqueado(bloqueados, a.getGenero())) {
+                    continue;
+                }
                 if (genero != null && !genero.equalsIgnoreCase(a.getGenero())) {
                     continue;
                 }
@@ -99,18 +109,22 @@ public class BusquedaService {
                 String artistaNombre = art != null ? art.getNombre() : "Artista desconocido";
                 String artistaId = art != null && art.getId() != null ? art.getId().toHexString() : null;
 
+                boolean albumBloqueado = bloqueado(bloqueados, al.getGenero());
                 boolean coincideGeneroAlbum = genero == null || genero.equalsIgnoreCase(al.getGenero());
                 boolean coincideAnio = anio == null
                         || (al.getFechaLanzamiento() != null && al.getFechaLanzamiento().getYear() == anio);
                 boolean coincideNombreAlbum = texto.isEmpty()
                         || (al.getNombre() != null && al.getNombre().toLowerCase().contains(textoLower));
 
-                if (quiereAlbumes && coincideGeneroAlbum && coincideAnio && coincideNombreAlbum) {
+                if (quiereAlbumes && !albumBloqueado && coincideGeneroAlbum && coincideAnio && coincideNombreAlbum) {
                     albumes.add(AlbumMapper.aDTO(al));
                 }
 
                 if (quiereCanciones && al.getCanciones() != null) {
                     for (Cancion cancion : al.getCanciones()) {
+                        if (albumBloqueado || bloqueado(bloqueados, cancion.getGenero())) {
+                            continue;
+                        }
                         boolean coincideNombreCancion = texto.isEmpty()
                                 || (cancion.getNombre() != null
                                 && cancion.getNombre().toLowerCase().contains(textoLower));
@@ -210,4 +224,27 @@ public class BusquedaService {
     private static int anio(LocalDate fecha) {
         return fecha == null ? Integer.MIN_VALUE : fecha.getYear();
     }
+
+    /** Géneros no deseados del usuario en sesión, en minúsculas (vacío si no hay sesión). */
+    private Set<String> generosBloqueados() {
+        if (!SesionActual.hayUsuario()) {
+            return Collections.emptySet();
+        }
+        List<String> g = SesionActual.getUsuario().getGenerosNoDeseados();
+        if (g == null || g.isEmpty()) {
+            return Collections.emptySet();
+        }
+        Set<String> set = new HashSet<>();
+        for (String x : g) {
+            if (x != null) {
+                set.add(x.trim().toLowerCase());
+            }
+        }
+        return set;
+    }
+
+    private static boolean bloqueado(Set<String> bloqueados, String genero) {
+        return genero != null && bloqueados.contains(genero.trim().toLowerCase());
+    }
 }
+

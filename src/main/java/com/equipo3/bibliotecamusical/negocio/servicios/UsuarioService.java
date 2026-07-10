@@ -13,6 +13,8 @@ import com.equipo3.bibliotecamusical.negocio.mapeadores.UsuarioMapper;
 import com.equipo3.bibliotecamusical.negocio.seguridad.Passwords;
 import com.equipo3.bibliotecamusical.negocio.validadores.ValidadorUsuario;
 import com.equipo3.bibliotecamusical.persistencia.LlaveDuplicadaException;
+import java.util.ArrayList;
+import java.util.List;
 import org.bson.types.ObjectId;
 
 /** Consulta y edicion del perfil del usuario (sin favoritos/restricciones, que son fases posteriores). */
@@ -50,6 +52,15 @@ public class UsuarioService {
         } catch (LlaveDuplicadaException e) {
             throw new DuplicadoException("El usuario o correo ya existe");
         }
+        return UsuarioMapper.aDTO(u);
+    }
+
+    /** Persiste la lista de géneros no deseados del usuario. */
+    public UsuarioDTO actualizarGenerosNoDeseados(String idHex, List<String> generos) {
+        Usuario u = cargar(idHex);
+        List<String> limpios = generos == null ? new ArrayList<>() : new ArrayList<>(generos);
+        usuarioDAO.actualizarGenerosNoDeseados(u.getId(), limpios);
+        u.setGenerosNoDeseados(limpios);
         return UsuarioMapper.aDTO(u);
     }
 

@@ -3,12 +3,16 @@ package com.equipo3.bibliotecamusical.daos;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.or;
 
+import com.equipo3.bibliotecamusical.entidades.Favorito;
+import com.equipo3.bibliotecamusical.entidades.TipoFavorito;
 import com.equipo3.bibliotecamusical.entidades.Usuario;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.InsertOneResult;
+import java.util.List;
 import java.util.Optional;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 
 /** Implementacion MongoDB del repositorio de usuarios. */
@@ -85,5 +89,24 @@ public class UsuarioDAOImpl implements IUsuarioDAO {
     public boolean eliminar(ObjectId id) {
         return OperacionesMongo.ejecutar(
                 () -> coleccion.deleteOne(eq("_id", id)).getDeletedCount() > 0);
+    }
+
+    @Override
+    public void agregarFavorito(ObjectId usuarioId, Favorito favorito) {
+        OperacionesMongo.ejecutar(
+                () -> coleccion.updateOne(eq("_id", usuarioId), Updates.push("favoritos", favorito)));
+    }
+
+    @Override
+    public void quitarFavorito(ObjectId usuarioId, TipoFavorito tipo, ObjectId refId) {
+        OperacionesMongo.ejecutar(() -> coleccion.updateOne(
+                eq("_id", usuarioId),
+                Updates.pull("favoritos", new Document("tipo", tipo.getClave()).append("refId", refId))));
+    }
+
+    @Override
+    public void actualizarGenerosNoDeseados(ObjectId usuarioId, List<String> generos) {
+        OperacionesMongo.ejecutar(() -> coleccion.updateOne(
+                eq("_id", usuarioId), Updates.set("generosNoDeseados", generos)));
     }
 }

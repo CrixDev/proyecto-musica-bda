@@ -5,6 +5,7 @@ import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
 import com.equipo3.bibliotecamusical.presentacion.vistas.NavegacionVistas;
 import com.equipo3.bibliotecamusical.presentacion.vistas.PantallaAlbumes;
 import com.equipo3.bibliotecamusical.presentacion.vistas.PantallaArtistas;
+import com.equipo3.bibliotecamusical.presentacion.vistas.PantallaFavoritos;
 import com.equipo3.bibliotecamusical.presentacion.vistas.PantallaInicio;
 import com.equipo3.bibliotecamusical.presentacion.vistas.VistaAlbumPanel;
 import com.equipo3.bibliotecamusical.presentacion.vistas.VistaArtistaPanel;
@@ -57,6 +58,7 @@ public class VentanaPrincipal {
     private final PantallaInicio pantallaInicio;
     private final PantallaArtistas pantallaArtistas;
     private final PantallaAlbumes pantallaAlbumes;
+    private final PantallaFavoritos pantallaFavoritos;
     private final VistaArtistaPanel vistaArtista;
     private final VistaAlbumPanel vistaAlbum;
 
@@ -104,18 +106,19 @@ public class VentanaPrincipal {
         pantallaInicio = new PantallaInicio(servicios, navegacion);
         pantallaArtistas = new PantallaArtistas(servicios, navegacion);
         pantallaAlbumes = new PantallaAlbumes(servicios, navegacion);
+        pantallaFavoritos = new PantallaFavoritos(servicios, navegacion);
         vistaArtista = new VistaArtistaPanel(servicios, navegacion);
         vistaAlbum = new VistaAlbumPanel(servicios, navegacion);
 
         cards.add(pantallaInicio, "inicio");
         cards.add(pantallaArtistas, "artistas");
         cards.add(pantallaAlbumes, "albumes");
+        cards.add(pantallaFavoritos, "favoritos");
         cards.add(vistaArtista, "detalleArtista");
         cards.add(vistaAlbum, "detalleAlbum");
-        // Perfil y Favoritos: se reutiliza el contenido de sus pantallas (sin su
-        // propia barra lateral) para integrarlas en este shell con un solo sidebar.
-        cards.add(PerfilFrame.crearContenido(frame), "perfil");
-        cards.add(FavoritosFrame.crearContenido(frame), "favoritos");
+        // Perfil: se reutiliza el contenido de su pantalla (sin su propia barra
+        // lateral) para integrarla en este shell con un solo sidebar.
+        cards.add(PerfilFrame.crearContenido(frame, servicios), "perfil");
 
         frame.add(construirSidebar(), BorderLayout.WEST);
         frame.add(cards, BorderLayout.CENTER);
@@ -136,8 +139,9 @@ public class VentanaPrincipal {
             case "inicio" -> pantallaInicio.recargar();
             case "artistas" -> pantallaArtistas.recargar();
             case "albumes" -> pantallaAlbumes.recargar();
+            case "favoritos" -> pantallaFavoritos.recargar();
             default -> {
-                // perfil / favoritos: contenido estático, no requiere recarga.
+                // perfil: contenido estático, no requiere recarga.
             }
         }
         ultimaSeccion = clave;

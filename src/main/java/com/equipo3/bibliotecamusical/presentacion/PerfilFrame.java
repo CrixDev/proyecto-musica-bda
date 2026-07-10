@@ -5,6 +5,7 @@
 package com.equipo3.bibliotecamusical.presentacion;
 
 
+import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
 import javax.swing.*;
 import java.awt.*;
@@ -55,7 +56,7 @@ public class PerfilFrame {
         frame.setLayout(new BorderLayout());
 
         frame.add(crearSidebar(), BorderLayout.WEST);
-        frame.add(crearContenido(frame), BorderLayout.CENTER);
+        frame.add(crearContenido(frame, null), BorderLayout.CENTER);
 
         return frame;
     }
@@ -191,7 +192,7 @@ public class PerfilFrame {
     // =========================================================
     //  CONTENIDO PRINCIPAL
     // =========================================================
-    static JPanel crearContenido(JFrame parentFrame) {
+    static JPanel crearContenido(JFrame parentFrame, Servicios servicios) {
         JPanel content = new JPanel(null);
         content.setBackground(Color.WHITE);
 
@@ -373,6 +374,19 @@ public class PerfilFrame {
         combo.setFont(new Font("SansSerif", Font.PLAIN, 12));
         combo.setFocusable(false);
 
+        // Persiste la lista de géneros no deseados en MongoDB (si hay servicios y sesión).
+        Runnable persistirGeneros = () -> {
+            if (servicios != null && SesionActual.hayUsuario()) {
+                try {
+                    servicios.usuarios().actualizarGenerosNoDeseados(
+                            SesionActual.getUsuarioId().toHexString(),
+                            new ArrayList<>(generosRestringidosList));
+                } catch (RuntimeException ignore) {
+                    // No bloquear la UI si falla la persistencia.
+                }
+            }
+        };
+
         // Redibujado con actualización dinámica en base de datos local (SesionActual)
         Runnable[] redibujar = new Runnable[1];
         redibujar[0] = () -> {
@@ -382,13 +396,12 @@ public class PerfilFrame {
                 JPanel chip = crearChipGenero(genero, () -> {
                     generosRestringidosList.remove(genero);
                     
-                    // Persistencia funcional: Actualiza la lista en memoria del usuario de la sesión
+                    // Persistencia funcional: memoria de sesión + MongoDB
                     if (SesionActual.hayUsuario()) {
                         SesionActual.getUsuario().setGenerosNoDeseados(generosRestringidosList);
-                        // NOTA: Aquí puedes llamar a tu capa DAO/Service si deseas persistir inmediatamente en MongoDB:
-                        // usuarioService.actualizar(SesionActual.getUsuario());
                     }
-                    
+                    persistirGeneros.run();
+
                     // Actualiza el número de la tarjeta de inmediato
                     lblNumRestringidos.setText(String.valueOf(generosRestringidosList.size()));
                     redibujar[0].run();
@@ -428,13 +441,12 @@ public class PerfilFrame {
                 if (seleccionado != null && !generosRestringidosList.contains(seleccionado)) {
                     generosRestringidosList.add(seleccionado);
                     
-                    // Persistencia funcional: Vincula los cambios al objeto real del Usuario
+                    // Persistencia funcional: memoria de sesión + MongoDB
                     if (SesionActual.hayUsuario()) {
                         SesionActual.getUsuario().setGenerosNoDeseados(generosRestringidosList);
-                        // Opcional: tu fachada de negocio para actualizar tu documento de MongoDB:
-                        // servicios.usuarios().actualizar(SesionActual.getUsuario());
                     }
-                    
+                    persistirGeneros.run();
+
                     // Actualiza el número de la tarjeta al instante
                     lblNumRestringidos.setText(String.valueOf(generosRestringidosList.size()));
                     redibujar[0].run();

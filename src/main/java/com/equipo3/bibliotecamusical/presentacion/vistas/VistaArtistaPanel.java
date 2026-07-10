@@ -8,8 +8,10 @@ import com.equipo3.bibliotecamusical.dtos.AlbumDTO;
 import com.equipo3.bibliotecamusical.dtos.ArtistaDTO;
 import com.equipo3.bibliotecamusical.dtos.IntegranteDTO;
 import com.equipo3.bibliotecamusical.entidades.TipoArtista;
+import com.equipo3.bibliotecamusical.entidades.TipoFavorito;
 import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.negocio.excepciones.NegocioException;
+import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BotonFavorito;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BotonPildora;
 import com.equipo3.bibliotecamusical.presentacion.componentes.EtiquetaBadge;
@@ -164,7 +166,9 @@ public class VistaArtistaPanel extends JPanel {
         acciones.setAlignmentX(Component.LEFT_ALIGNMENT);
         BotonPildora reproducir = new BotonPildora("\u25B6  Reproducir", true);
         reproducir.addActionListener(e -> alReproducir.run());
-        BotonFavorito favorito = new BotonFavorito(false);
+        BotonFavorito favorito = new BotonFavorito(esFavorito(TipoFavorito.ARTISTA, artista.id()));
+        favorito.alCambiar(nuevo -> alternarFavorito(
+                TipoFavorito.ARTISTA, artista.id(), null, artista.genero(), nuevo, favorito));
         acciones.add(reproducir);
         acciones.add(favorito);
         textos.add(acciones);
@@ -335,6 +339,33 @@ public class VistaArtistaPanel extends JPanel {
         detalle.setAlignmentX(Component.LEFT_ALIGNMENT);
         fila.add(detalle);
         return fila;
+    }
+
+    // ---------------------------------------------------------- favoritos
+
+    private boolean esFavorito(TipoFavorito tipo, String refId) {
+        if (servicios == null || !SesionActual.hayUsuario() || refId == null) {
+            return false;
+        }
+        try {
+            return servicios.favoritos().esFavorito(
+                    SesionActual.getUsuarioId().toHexString(), tipo, refId);
+        } catch (NegocioException e) {
+            return false;
+        }
+    }
+
+    private void alternarFavorito(TipoFavorito tipo, String refId, String albumId,
+            String genero, boolean deseado, BotonFavorito boton) {
+        if (servicios == null || !SesionActual.hayUsuario()) {
+            return;
+        }
+        try {
+            servicios.favoritos().alternar(SesionActual.getUsuarioId().toHexString(),
+                    tipo, refId, albumId, genero, deseado);
+        } catch (NegocioException e) {
+            boton.setActivo(!deseado); // revertir el toggle si falló
+        }
     }
 
     private JPanel mensajeError(String mensaje) {
