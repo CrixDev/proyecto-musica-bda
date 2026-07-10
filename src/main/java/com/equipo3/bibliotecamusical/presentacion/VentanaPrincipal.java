@@ -1,16 +1,7 @@
 package com.equipo3.bibliotecamusical.presentacion;
 
-import com.equipo3.bibliotecamusical.entidades.Usuario;
 import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
-import com.equipo3.bibliotecamusical.persistencia.ConexionMongo;
-import com.equipo3.bibliotecamusical.persistencia.InicializadorBd;
-import com.equipo3.bibliotecamusical.presentacion.estilo.Estilos;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import org.bson.types.ObjectId;
 import com.equipo3.bibliotecamusical.presentacion.vistas.NavegacionVistas;
 import com.equipo3.bibliotecamusical.presentacion.vistas.PantallaAlbumes;
 import com.equipo3.bibliotecamusical.presentacion.vistas.PantallaArtistas;
@@ -30,24 +21,24 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import javax.swing.JPopupMenu;
 
 /**
  * Shell principal de la aplicación: barra lateral de navegación + área de
- * contenido con {@link CardLayout} que hospeda las tres pantallas de consulta
- * (Inicio, Artistas, Álbumes) y las vistas de detalle (artista / álbum). Es el
- * punto de entrada gráfico real de la app una vez iniciada la sesión.
- *
- * <p>Ejecutar con:
- * {@code mvn -q compile exec:java
- * -Dexec.mainClass=com.equipo3.bibliotecamusical.presentacion.VentanaPrincipal}
+ * contenido con {@link CardLayout} que hospeda todas las pantallas en una sola
+ * ventana: Inicio, Artistas, Álbumes, detalle de artista/álbum, Perfil y
+ * Favoritos. Se construye después de iniciar sesión (ver {@code InicioSesion} /
+ * {@code App}).
  */
 public class VentanaPrincipal {
 
@@ -75,9 +66,23 @@ public class VentanaPrincipal {
         this.servicios = servicios;
 
         frame = new JFrame("Biblioteca Musical");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setMinimumSize(new Dimension(1000, 680));
         frame.setLayout(new BorderLayout());
+
+        // Al cerrarse la ventana: si el usuario cerró sesión, se vuelve al login;
+        // si cerró la app con la sesión activa, se termina el proceso.
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if (SesionActual.hayUsuario()) {
+                    System.exit(0);
+                } else {
+                    InicioSesion.mostrar(servicios.autenticacion(),
+                            () -> new VentanaPrincipal(servicios).mostrar());
+                }
+            }
+        });
 
         NavegacionVistas navegacion = new NavegacionVistas() {
             @Override
@@ -107,6 +112,10 @@ public class VentanaPrincipal {
         cards.add(pantallaAlbumes, "albumes");
         cards.add(vistaArtista, "detalleArtista");
         cards.add(vistaAlbum, "detalleAlbum");
+        // Perfil y Favoritos: se reutiliza el contenido de sus pantallas (sin su
+        // propia barra lateral) para integrarlas en este shell con un solo sidebar.
+        cards.add(PerfilFrame.crearContenido(frame), "perfil");
+        cards.add(FavoritosFrame.crearContenido(frame), "favoritos");
 
         frame.add(construirSidebar(), BorderLayout.WEST);
         frame.add(cards, BorderLayout.CENTER);
@@ -128,6 +137,7 @@ public class VentanaPrincipal {
             case "artistas" -> pantallaArtistas.recargar();
             case "albumes" -> pantallaAlbumes.recargar();
             default -> {
+                // perfil / favoritos: contenido estático, no requiere recarga.
             }
         }
         ultimaSeccion = clave;
@@ -149,6 +159,15 @@ public class VentanaPrincipal {
 
     private void marcarActivo(String clave) {
         items.forEach((k, item) -> item.setActivo(k.equals(clave)));
+    }
+
+    private void cerrarSesion() {
+        int r = JOptionPane.showConfirmDialog(frame, "¿Deseas cerrar la sesión?",
+                "Cerrar sesión", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (r == JOptionPane.YES_OPTION) {
+            SesionActual.cerrar();
+            frame.dispose(); // dispara windowClosed -> regresa al login
+        }
     }
 
     // --------------------------------------------------------------- sidebar
@@ -186,9 +205,9 @@ public class VentanaPrincipal {
         seccion.setBorder(BorderFactory.createEmptyBorder(0, 6, 8, 0));
         top.add(seccion);
 
-        top.add(navItem("favoritos", "♡", "Favoritos", this::abrirFavoritos));
+        top.add(navItem("favoritos", "♡", "Favoritos", () -> mostrarSeccion("favoritos")));
         top.add(javax.swing.Box.createVerticalStrut(6));
-        top.add(navItem("perfil", "👤", "Perfil", this::abrirPerfil));
+        top.add(navItem("perfil", "👤", "Perfil", () -> mostrarSeccion("perfil")));
 
         sidebar.add(top, BorderLayout.NORTH);
         sidebar.add(construirChipUsuario(), BorderLayout.SOUTH);
@@ -238,7 +257,7 @@ public class VentanaPrincipal {
         bottom.setOpaque(false);
         bottom.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createMatteBorder(1, 0, 0, 0, GRIS_BORDE),
-                BorderFactory.createEmptyBorder(14, 18, 14, 18)));
+                BorderFactory.createEmptyBorder(14, 18, 14, 14)));
 
         String nombre = SesionActual.hayUsuario()
                 ? SesionActual.getUsuario().getNombreUsuario() : "Invitado";
@@ -259,6 +278,25 @@ public class VentanaPrincipal {
         textos.add(lblNombre);
         textos.add(lblTag);
         bottom.add(textos, BorderLayout.CENTER);
+
+        // Menú de cerrar sesión
+        JLabel menu = new JLabel("⌄");
+        menu.setFont(new Font("SansSerif", Font.BOLD, 14));
+        menu.setForeground(GRIS_TEXTO);
+        menu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        menu.setToolTipText("Opciones de sesión");
+        JPopupMenu popup = new JPopupMenu();
+        JMenuItem salir = new JMenuItem("Cerrar sesión");
+        salir.setForeground(new Color(0xD6, 0x33, 0x6C));
+        salir.addActionListener(e -> cerrarSesion());
+        popup.add(salir);
+        menu.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                popup.show(menu, -60, -popup.getPreferredSize().height - 4);
+            }
+        });
+        bottom.add(menu, BorderLayout.EAST);
         return bottom;
     }
 
@@ -282,22 +320,6 @@ public class VentanaPrincipal {
         av.setOpaque(false);
         av.setPreferredSize(new Dimension(diametro, diametro));
         return av;
-    }
-
-    private void abrirPerfil() {
-        try {
-            PerfilFrame.crearPerfil().setVisible(true);
-        } catch (RuntimeException e) {
-            JOptionPane.showMessageDialog(frame, "No se pudo abrir el perfil: " + e.getMessage());
-        }
-    }
-
-    private void abrirFavoritos() {
-        try {
-            FavoritosFrame.crearFavoritos().setVisible(true);
-        } catch (RuntimeException e) {
-            JOptionPane.showMessageDialog(frame, "No se pudo abrir favoritos: " + e.getMessage());
-        }
     }
 
     // ------------------------------------------------------- item de menú
@@ -356,103 +378,10 @@ public class VentanaPrincipal {
         }
     }
 
-    // -------------------------------------------------- login simulado (demo)
-
-    /**
-     * Muestra una pantalla de login <b>simulada</b> y, al "iniciar sesión" con
-     * cualquier credencial, abre la ventana principal con una sesión de demo.
-     * El login real (validación contra la BD) queda pendiente; esto solo sirve
-     * para poder probar el resto de las pantallas ya conectadas.
-     */
-    public static void mostrarLoginSimulado(Servicios servicios) {
-        JFrame login = new JFrame("Biblioteca Musical - Iniciar Sesión (demo)");
-        login.setSize(760, 480);
-        login.setResizable(false);
-        login.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        login.setLayout(new BorderLayout());
-        login.add(InicioSesion.crearSidebar(), BorderLayout.WEST);
-
-        JPanel content = new JPanel(null);
-        content.setBackground(Color.WHITE);
-
-        JLabel title = new JLabel("Iniciar Sesión");
-        title.setFont(new Font("SansSerif", Font.BOLD, 24));
-        title.setForeground(TEXTO_OSCURO);
-        title.setBounds(45, 55, 300, 35);
-        content.add(title);
-
-        JLabel userLbl = new JLabel("Nombre de usuario o Correo");
-        userLbl.setFont(new Font("SansSerif", Font.PLAIN, 12));
-        userLbl.setForeground(new Color(0x55, 0x55, 0x55));
-        userLbl.setBounds(45, 110, 250, 18);
-        content.add(userLbl);
-
-        JTextField userField = InicioSesion.crearCampoTexto("Escribe cualquier usuario (demo)");
-        userField.setBounds(45, 130, 360, 38);
-        content.add(userField);
-
-        JLabel passLbl = new JLabel("Contraseña");
-        passLbl.setFont(new Font("SansSerif", Font.PLAIN, 12));
-        passLbl.setForeground(new Color(0x55, 0x55, 0x55));
-        passLbl.setBounds(45, 180, 250, 18);
-        content.add(passLbl);
-
-        JPanel passPanel = InicioSesion.crearCampoPassword();
-        passPanel.setBounds(45, 200, 360, 38);
-        content.add(passPanel);
-
-        JButton loginBtn = InicioSesion.crearBotonRedondeado("Iniciar Sesión", new Color(0x18, 0xE5, 0xB0));
-        loginBtn.setBounds(45, 265, 360, 42);
-        loginBtn.addActionListener(e -> {
-            simularSesion(userField.getText());
-            login.dispose();
-            new VentanaPrincipal(servicios).mostrar();
-        });
-        content.add(loginBtn);
-
-        JLabel nota = new JLabel("<html><i>Modo demo: el login aún no valida contra la base de datos. "
-                + "Entra con cualquier usuario/contraseña.</i></html>");
-        nota.setFont(new Font("SansSerif", Font.PLAIN, 11));
-        nota.setForeground(GRIS_TEXTO);
-        nota.setBounds(45, 320, 370, 40);
-        content.add(nota);
-
-        login.add(content, BorderLayout.CENTER);
-        login.getRootPane().setDefaultButton(loginBtn);
-        login.setLocationRelativeTo(null);
-        login.setVisible(true);
-    }
-
-    /** Crea una sesión de demostración en memoria (sin persistir) para el usuario indicado. */
-    private static void simularSesion(String nombreIngresado) {
-        String nombre = (nombreIngresado == null || nombreIngresado.isBlank())
-                ? "Cristian Devora" : nombreIngresado.trim();
-        Usuario u = new Usuario();
-        u.setId(new ObjectId());
-        u.setNombreUsuario(nombre);
-        u.setCorreo(nombre.toLowerCase().replace(" ", "_") + "@demo.com");
-        u.setFechaRegistro(LocalDate.now());
-        u.setFavoritos(new ArrayList<>());
-        u.setGenerosNoDeseados(new ArrayList<>());
-        SesionActual.iniciar(u);
-    }
-
     // ------------------------------------------------------------------ main
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            if (!ConexionMongo.disponible()) {
-                JOptionPane.showMessageDialog(null,
-                        "MongoDB no está disponible en localhost:27017.\n"
-                        + "Inicia el servidor (o MongoDB Compass) y vuelve a intentar.",
-                        "Biblioteca Musical", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            InicializadorBd.inicializar(ConexionMongo.getBaseDatos());
-            Servicios servicios = new Servicios(ConexionMongo.getBaseDatos());
-            // Fondo consistente con la paleta de la app.
-            javax.swing.UIManager.put("Panel.background", Estilos.FONDO);
-            new VentanaPrincipal(servicios).mostrar();
-        });
+        // El arranque real de la app está en App; se delega para no duplicar lógica.
+        com.equipo3.bibliotecamusical.App.main(args);
     }
 }

@@ -87,13 +87,16 @@ public class AutenticacionService {
             throw new ValidacionException("Los datos de registro no pueden ser nulos.");
         }
 
+        // Reglas de formato (correo valido, longitud de contrasena, confirmacion, etc.)
+        ValidadorUsuario.validarRegistro(dto);
+
         try {
             // Validar si ya existen el nombre de usuario o correo en la base de datos
             if (usuarioDAO.existeNombreUsuario(dto.nombreUsuario())) {
-                throw new NegocioException("El nombre de usuario ya se encuentra registrado.");
+                throw new DuplicadoException("El nombre de usuario ya se encuentra registrado.");
             }
             if (usuarioDAO.existeCorreo(dto.correo())) {
-                throw new NegocioException("El correo electrónico ya se encuentra registrado.");
+                throw new DuplicadoException("El correo electrónico ya se encuentra registrado.");
             }
 
             // Crear la entidad de dominio mapeando los datos del DTO

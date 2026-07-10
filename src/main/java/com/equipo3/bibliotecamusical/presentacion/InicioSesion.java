@@ -5,11 +5,15 @@
 package com.equipo3.bibliotecamusical.presentacion;
 
 import com.equipo3.bibliotecamusical.dtos.CredencialesDTO;
+import com.equipo3.bibliotecamusical.dtos.RegistroUsuarioDTO;
 import com.equipo3.bibliotecamusical.dtos.UsuarioDTO;
+import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.negocio.excepciones.AutenticacionException;
 import com.equipo3.bibliotecamusical.negocio.excepciones.NegocioException;
 import com.equipo3.bibliotecamusical.negocio.excepciones.ValidacionException;
 import com.equipo3.bibliotecamusical.negocio.servicios.AutenticacionService;
+import com.equipo3.bibliotecamusical.persistencia.ConexionMongo;
+import com.equipo3.bibliotecamusical.persistencia.InicializadorBd;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -27,11 +31,34 @@ public class InicioSesion {
     // Instancia del servicio que procesará el login
     private static AutenticacionService autenticacionService;
 
+    // Callback que se ejecuta al iniciar sesión con éxito (lo define quien abre el login,
+    // p. ej. App: abrir la ventana principal). Así el login no conoce al shell.
+    private static Runnable alIniciarSesionExitosa;
+
     // ---------- Punto de entrada ----------
     public static void main(String[] args) {
-        // NOTA: Recuerda inicializar 'autenticacionService' antes de hacer pruebas,
-        // pasándole tu implementación de UsuarioDAOImpl conectada a MongoDB.
-        SwingUtilities.invokeLater(() -> crearLogin().setVisible(true));
+        // Ejecución autónoma: conecta a Mongo para poder probar el login por sí solo.
+        SwingUtilities.invokeLater(() -> {
+            if (!ConexionMongo.disponible()) {
+                JOptionPane.showMessageDialog(null,
+                        "MongoDB no está disponible en localhost:27017.",
+                        "Biblioteca Musical", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            InicializadorBd.inicializar(ConexionMongo.getBaseDatos());
+            Servicios servicios = new Servicios(ConexionMongo.getBaseDatos());
+            mostrar(servicios.autenticacion(), () -> new VentanaPrincipal(servicios).mostrar());
+        });
+    }
+
+    /**
+     * Configura el servicio de autenticación y el callback de éxito, y muestra la
+     * pantalla de inicio de sesión. Es el punto de entrada usado por {@code App}.
+     */
+    public static void mostrar(AutenticacionService servicio, Runnable alIniciarSesionExitosa) {
+        InicioSesion.autenticacionService = servicio;
+        InicioSesion.alIniciarSesionExitosa = alIniciarSesionExitosa;
+        crearLogin().setVisible(true);
     }
 
     // =========================================================
@@ -93,16 +120,14 @@ public class InicioSesion {
 
             if (autenticacionService != null) {
                 try {
-                    // 1. Llamada protegida en bloque try-catch (Soluciona error 1)
-                    UsuarioDTO usuarioLogueado = autenticacionService.login(credenciales);
-                    
-                    // 2. Uso correcto de la sintaxis de Record empleando .nombreUsuario() (Soluciona error 2)
-                    JOptionPane.showMessageDialog(frame, "¡Bienvenido " + usuarioLogueado.nombreUsuario() + "!", "Acceso Concedido", JOptionPane.INFORMATION_MESSAGE);
-                    
-                    frame.dispose();
-                    // Aquí abrirías tu MenuPrincipal: 
-                    // new MenuPrincipal().setVisible(true);
+                    // Autentica contra MongoDB (bcrypt). Si falla, lanza excepción.
+                    autenticacionService.login(credenciales);
 
+                    // Éxito: cierra el login y abre la ventana principal vía callback.
+                    frame.dispose();
+                    if (alIniciarSesionExitosa != null) {
+                        alIniciarSesionExitosa.run();
+                    }
                 } catch (AutenticacionException | ValidacionException ex) {
                     JOptionPane.showMessageDialog(frame, ex.getMessage(), "Error de Credenciales", JOptionPane.WARNING_MESSAGE);
                 } catch (NegocioException ex) {
@@ -217,8 +242,29 @@ public class InicioSesion {
         passField.setBounds(45, 255, 360, 36);
         content.add(passField);
 
+        JPasswordField passRegistro = (JPasswordField) passField.getComponent(0);
+
         JButton registerBtn = crearBotonRedondeado("Crear cuenta", new Color(0x18E5B0));
         registerBtn.setBounds(45, 305, 360, 42);
+        registerBtn.addActionListener(e -> {
+            if (autenticacionService == null) {
+                JOptionPane.showMessageDialog(frame, "El servicio de registro no está inicializado.",
+                        "Error de Sistema", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String clave = new String(passRegistro.getPassword());
+            try {
+                autenticacionService.registrar(new RegistroUsuarioDTO(
+                        userField.getText().trim(), emailField.getText().trim(), clave, clave, null));
+                JOptionPane.showMessageDialog(frame, "¡Cuenta creada! Ahora inicia sesión.",
+                        "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                frame.dispose();
+                crearLogin().setVisible(true);
+            } catch (NegocioException ex) {
+                JOptionPane.showMessageDialog(frame, ex.getMessage(),
+                        "No se pudo registrar", JOptionPane.WARNING_MESSAGE);
+            }
+        });
         content.add(registerBtn);
 
         JLabel link = new JLabel("<html>¿Ya tienes cuenta? "

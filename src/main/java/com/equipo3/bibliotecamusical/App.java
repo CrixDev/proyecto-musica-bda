@@ -1,8 +1,10 @@
 package com.equipo3.bibliotecamusical;
 
+import com.equipo3.bibliotecamusical.dtos.RegistroUsuarioDTO;
 import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.persistencia.ConexionMongo;
 import com.equipo3.bibliotecamusical.persistencia.InicializadorBd;
+import com.equipo3.bibliotecamusical.presentacion.InicioSesion;
 import com.equipo3.bibliotecamusical.presentacion.VentanaPrincipal;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -46,8 +48,24 @@ public final class App {
         Servicios servicios = new Servicios(ConexionMongo.getBaseDatos());
 
         sembrarSiVacio(servicios);
+        sembrarUsuarioDemo(servicios);
 
-        VentanaPrincipal.mostrarLoginSimulado(servicios);
+        // Login real; al iniciar sesión con éxito se abre la ventana principal.
+        InicioSesion.mostrar(servicios.autenticacion(),
+                () -> new VentanaPrincipal(servicios).mostrar());
+    }
+
+    /**
+     * Crea un usuario de prueba ({@code demo} / {@code demo123}) si aún no existe,
+     * para poder iniciar sesión de inmediato sin tener que registrarse primero.
+     */
+    private static void sembrarUsuarioDemo(Servicios servicios) {
+        try {
+            servicios.autenticacion().registrar(new RegistroUsuarioDTO(
+                    "demo", "demo@bibliotecamusical.com", "demo123", "demo123", null));
+        } catch (RuntimeException e) {
+            // Ya existe (o no se pudo crear): se ignora; el login sigue disponible.
+        }
     }
 
     /**
