@@ -7,6 +7,7 @@ import com.equipo3.bibliotecamusical.dtos.ResultadoBusqueda;
 import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.negocio.servicios.CriteriosBusqueda;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BarraBusqueda;
+import com.equipo3.bibliotecamusical.presentacion.componentes.BarraPaginacion;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BotonPildora;
 import com.equipo3.bibliotecamusical.presentacion.componentes.CirculoArtista;
 import com.equipo3.bibliotecamusical.presentacion.componentes.PanelFiltros;
@@ -18,6 +19,7 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.util.List;
+import java.util.function.IntConsumer;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -35,7 +37,7 @@ public class PantallaInicio extends JPanel {
 
     private static final int LADO_ARTISTA = 128;
     private static final int LADO_PORTADA = 150;
-    private static final int MAX_POR_SECCION = 18;
+    private static final int TAMANO_PAGINA = 12;
 
     private final Servicios servicios;
     private final NavegacionVistas navegacion;
@@ -45,6 +47,10 @@ public class PantallaInicio extends JPanel {
     private BotonPildora botonFiltros;
 
     private CriteriosBusqueda criterios = CriteriosBusqueda.vacio();
+    // Página actual de cada sección (paginación independiente por sección).
+    private int pagArtistas = 0;
+    private int pagAlbumes = 0;
+    private int pagCanciones = 0;
 
     public PantallaInicio(Servicios servicios, NavegacionVistas navegacion) {
         this.servicios = servicios;
@@ -74,6 +80,7 @@ public class PantallaInicio extends JPanel {
 
         barra.alEscribir(texto -> {
             criterios = criterios.conTexto(texto);
+            reiniciarPaginas();
             recargar();
         });
         barraSup.add(barra, BorderLayout.CENTER);
@@ -82,6 +89,7 @@ public class PantallaInicio extends JPanel {
         botonFiltros.addActionListener(e -> PanelFiltros.mostrar(
                 botonFiltros, criterios, aniosDisponibles(), true, nuevos -> {
                     criterios = nuevos.conTexto(barra.getTexto());
+                    reiniciarPaginas();
                     recargar();
                 }));
 
@@ -123,39 +131,66 @@ public class PantallaInicio extends JPanel {
     // ------------------------------------------------------------- secciones
 
     private JPanel seccionArtistas(String titulo, List<ArtistaDTO> artistas) {
+        int total = artistas.size();
+        int totalPaginas = Math.max(1, (int) Math.ceil(total / (double) TAMANO_PAGINA));
+        pagArtistas = Math.max(0, Math.min(pagArtistas, totalPaginas - 1));
+        int desde = pagArtistas * TAMANO_PAGINA;
+        int hasta = Math.min(desde + TAMANO_PAGINA, total);
         JPanel grid = grid();
-        int mostrados = Math.min(artistas.size(), MAX_POR_SECCION);
-        for (int i = 0; i < mostrados; i++) {
+        for (int i = desde; i < hasta; i++) {
             ArtistaDTO a = artistas.get(i);
             grid.add(new CirculoArtista(a, LADO_ARTISTA, () -> navegacion.irADetalleArtista(a.id())));
         }
-        return seccion(titulo, artistas.size(), grid);
+        return seccion(titulo, total, grid, pagArtistas, totalPaginas, p -> {
+            pagArtistas = p;
+            recargar();
+        });
     }
 
     private JPanel seccionAlbumes(String titulo, List<AlbumDTO> albumes) {
+        int total = albumes.size();
+        int totalPaginas = Math.max(1, (int) Math.ceil(total / (double) TAMANO_PAGINA));
+        pagAlbumes = Math.max(0, Math.min(pagAlbumes, totalPaginas - 1));
+        int desde = pagAlbumes * TAMANO_PAGINA;
+        int hasta = Math.min(desde + TAMANO_PAGINA, total);
         JPanel grid = grid();
-        int mostrados = Math.min(albumes.size(), MAX_POR_SECCION);
-        for (int i = 0; i < mostrados; i++) {
+        for (int i = desde; i < hasta; i++) {
             AlbumDTO al = albumes.get(i);
             String sub = Formato.anio(al.fechaLanzamiento());
             grid.add(new TarjetaAlbum(al.imagenPortada(), al.nombre(), sub, LADO_PORTADA,
                     () -> navegacion.irADetalleAlbum(al.id())));
         }
-        return seccion(titulo, albumes.size(), grid);
+        return seccion(titulo, total, grid, pagAlbumes, totalPaginas, p -> {
+            pagAlbumes = p;
+            recargar();
+        });
     }
 
     private JPanel seccionCanciones(String titulo, List<CancionResultadoDTO> canciones) {
+        int total = canciones.size();
+        int totalPaginas = Math.max(1, (int) Math.ceil(total / (double) TAMANO_PAGINA));
+        pagCanciones = Math.max(0, Math.min(pagCanciones, totalPaginas - 1));
+        int desde = pagCanciones * TAMANO_PAGINA;
+        int hasta = Math.min(desde + TAMANO_PAGINA, total);
         JPanel grid = grid();
-        int mostrados = Math.min(canciones.size(), MAX_POR_SECCION);
-        for (int i = 0; i < mostrados; i++) {
+        for (int i = desde; i < hasta; i++) {
             CancionResultadoDTO c = canciones.get(i);
             grid.add(new TarjetaAlbum(c.imagenPortada(), c.nombre(), c.artistaNombre(), LADO_PORTADA,
                     () -> navegacion.irADetalleAlbum(c.albumId())));
         }
-        return seccion(titulo, canciones.size(), grid);
+        return seccion(titulo, total, grid, pagCanciones, totalPaginas, p -> {
+            pagCanciones = p;
+            recargar();
+        });
     }
 
     // -------------------------------------------------------------- ayudas
+
+    private void reiniciarPaginas() {
+        pagArtistas = 0;
+        pagAlbumes = 0;
+        pagCanciones = 0;
+    }
 
     private JPanel grid() {
         JPanel grid = new JPanel(new WrapLayout(FlowLayout.LEFT, 6, 6));
@@ -164,19 +199,28 @@ public class PantallaInicio extends JPanel {
         return grid;
     }
 
-    private JPanel seccion(String titulo, int total, JPanel grid) {
+    private JPanel seccion(String titulo, int total, JPanel grid,
+            int paginaActual, int totalPaginas, IntConsumer alIrAPagina) {
         JPanel seccion = new JPanel();
         seccion.setOpaque(false);
         seccion.setLayout(new BoxLayout(seccion, BoxLayout.Y_AXIS));
         seccion.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        JLabel lbl = new JLabel(total > MAX_POR_SECCION ? titulo + "  (" + total + ")" : titulo);
+        JLabel lbl = new JLabel(titulo + "  (" + total + ")");
         lbl.setFont(Estilos.TITULO_MEDIANO);
         lbl.setForeground(Estilos.TEXTO_PRIMARIO);
         lbl.setAlignmentX(Component.LEFT_ALIGNMENT);
         lbl.setBorder(BorderFactory.createEmptyBorder(16, 6, 8, 0));
         seccion.add(lbl);
         seccion.add(grid);
+
+        if (totalPaginas > 1) {
+            JPanel filaPag = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
+            filaPag.setOpaque(false);
+            filaPag.setAlignmentX(Component.LEFT_ALIGNMENT);
+            filaPag.add(new BarraPaginacion(paginaActual, totalPaginas, total, alIrAPagina));
+            seccion.add(filaPag);
+        }
         return seccion;
     }
 

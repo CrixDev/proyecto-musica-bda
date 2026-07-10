@@ -50,16 +50,15 @@ public final class ValidadorArtista {
 
     private static void validarIntegrantes(Artista a, List<String> errores) {
         boolean tieneIntegrantes = a.getIntegrantes() != null && !a.getIntegrantes().isEmpty();
-        if (a.esBanda()) {
-            if (!tieneIntegrantes) {
-                errores.add("Una banda debe tener al menos un integrante");
-            } else {
-                for (Integrante i : a.getIntegrantes()) {
-                    validarIntegrante(i, errores);
-                }
+        // Una banda debe tener al menos un integrante. Un solista puede registrarse
+        // a si mismo como integrante (se agrega a el mismo), asi que tambien se permite.
+        if (a.esBanda() && !tieneIntegrantes) {
+            errores.add("Una banda debe tener al menos un integrante");
+        }
+        if (tieneIntegrantes) {
+            for (Integrante i : a.getIntegrantes()) {
+                validarIntegrante(i, errores);
             }
-        } else if (tieneIntegrantes) {
-            errores.add("Un solista no puede tener integrantes");
         }
     }
 

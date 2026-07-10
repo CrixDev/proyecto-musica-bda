@@ -7,6 +7,7 @@ import com.equipo3.bibliotecamusical.negocio.Servicios;
 import com.equipo3.bibliotecamusical.negocio.servicios.CriteriosBusqueda;
 import com.equipo3.bibliotecamusical.negocio.servicios.TipoContenido;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BarraBusqueda;
+import com.equipo3.bibliotecamusical.presentacion.componentes.BarraPaginacion;
 import com.equipo3.bibliotecamusical.presentacion.componentes.BotonPildora;
 import com.equipo3.bibliotecamusical.presentacion.componentes.PanelFiltros;
 import com.equipo3.bibliotecamusical.presentacion.componentes.TarjetaAlbum;
@@ -31,15 +32,18 @@ import javax.swing.JScrollPane;
 public class PantallaAlbumes extends JPanel {
 
     private static final int LADO_PORTADA = 160;
+    private static final int TAMANO_PAGINA = 12;
 
     private final Servicios servicios;
     private final NavegacionVistas navegacion;
 
     private final JPanel grid = new JPanel(new WrapLayout(FlowLayout.LEFT, 10, 16));
+    private final JPanel paginador = new JPanel(new BorderLayout());
     private final BarraBusqueda barra = new BarraBusqueda("Buscar álbum por nombre o canción");
     private BotonPildora botonFiltros;
 
     private CriteriosBusqueda criterios = CriteriosBusqueda.vacio().conTipo(TipoContenido.ALBUM);
+    private int pagina = 0;
 
     public PantallaAlbumes(Servicios servicios, NavegacionVistas navegacion) {
         this.servicios = servicios;
@@ -67,6 +71,10 @@ public class PantallaAlbumes extends JPanel {
         scroll.getViewport().setBackground(Estilos.FONDO);
         add(scroll, BorderLayout.CENTER);
 
+        paginador.setBackground(Estilos.FONDO);
+        paginador.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Estilos.BORDE));
+        add(paginador, BorderLayout.SOUTH);
+
         recargar();
     }
 
@@ -77,6 +85,7 @@ public class PantallaAlbumes extends JPanel {
 
         barra.alEscribir(texto -> {
             criterios = criterios.conTexto(texto);
+            pagina = 0;
             recargar();
         });
         barraSup.add(barra, BorderLayout.CENTER);
@@ -85,6 +94,7 @@ public class PantallaAlbumes extends JPanel {
         botonFiltros.addActionListener(e -> PanelFiltros.mostrar(
                 botonFiltros, criterios, aniosDisponibles(), false, nuevos -> {
                     criterios = nuevos.conTexto(barra.getTexto()).conTipo(TipoContenido.ALBUM);
+                    pagina = 0;
                     recargar();
                 }));
 
@@ -95,12 +105,15 @@ public class PantallaAlbumes extends JPanel {
         return barraSup;
     }
 
-    /** Repinta el grid con los álbumes que coinciden con el buscador/filtros. */
+    /** Repinta el grid con la página actual de álbumes que coinciden con el buscador/filtros. */
     public void recargar() {
         grid.removeAll();
+        paginador.removeAll();
         Map<String, String> nombreArtistaPorId = mapaArtistas();
         ResultadoBusqueda resultado = servicios.busqueda().buscar(criterios);
         List<AlbumDTO> albumes = resultado.albumes();
+        int total = albumes.size();
+
         if (albumes.isEmpty()) {
             JLabel vacio = new JLabel(criterios.texto() != null && !criterios.texto().isBlank()
                     ? "No hay álbumes que coincidan con \"" + criterios.texto() + "\"."
@@ -109,14 +122,27 @@ public class PantallaAlbumes extends JPanel {
             vacio.setForeground(Estilos.TEXTO_SECUNDARIO);
             grid.add(vacio);
         } else {
-            for (AlbumDTO al : albumes) {
+            int totalPaginas = Math.max(1, (int) Math.ceil(total / (double) TAMANO_PAGINA));
+            pagina = Math.max(0, Math.min(pagina, totalPaginas - 1));
+            int desde = pagina * TAMANO_PAGINA;
+            int hasta = Math.min(desde + TAMANO_PAGINA, total);
+            for (int i = desde; i < hasta; i++) {
+                AlbumDTO al = albumes.get(i);
                 String artista = nombreArtistaPorId.getOrDefault(al.artistaId(), "");
                 grid.add(new TarjetaAlbum(al.imagenPortada(), al.nombre(), artista, LADO_PORTADA,
                         () -> navegacion.irADetalleAlbum(al.id())));
             }
+            if (totalPaginas > 1) {
+                paginador.add(new BarraPaginacion(pagina, totalPaginas, total, p -> {
+                    pagina = p;
+                    recargar();
+                }), BorderLayout.CENTER);
+            }
         }
         grid.revalidate();
         grid.repaint();
+        paginador.revalidate();
+        paginador.repaint();
     }
 
     private Map<String, String> mapaArtistas() {

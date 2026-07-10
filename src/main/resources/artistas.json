@@ -4,7 +4,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/andres_reyes.jpg",
     "genero": "Rock",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Andrés Reyes",
+        "rol": "Solista",
+        "fechaIngreso": "2020-05-15",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Primer Vuelo",
@@ -12,9 +19,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/andres_1.jpg",
         "canciones": [
-          { "nombre": "Cancion Uno", "numeroPista": 1, "duracionSegundos": 210, "genero": "Rock" },
-          { "nombre": "Cancion Dos", "numeroPista": 2, "duracionSegundos": 180, "genero": "Rock" },
-          { "nombre": "Cancion Tres", "numeroPista": 3, "duracionSegundos": 240, "genero": "Rock" }
+          {
+            "nombre": "Cancion Uno",
+            "numeroPista": 1,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Cancion Dos",
+            "numeroPista": 2,
+            "duracionSegundos": 180,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Cancion Tres",
+            "numeroPista": 3,
+            "duracionSegundos": 240,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -23,9 +45,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/andres_2.jpg",
         "canciones": [
-          { "nombre": "Ruta 66", "numeroPista": 1, "duracionSegundos": 195, "genero": "Rock" },
-          { "nombre": "Fuego Azul", "numeroPista": 2, "duracionSegundos": 220, "genero": "Rock" },
-          { "nombre": "Adiós", "numeroPista": 3, "duracionSegundos": 300, "genero": "Rock" }
+          {
+            "nombre": "Ruta 66",
+            "numeroPista": 1,
+            "duracionSegundos": 195,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Fuego Azul",
+            "numeroPista": 2,
+            "duracionSegundos": 220,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Adiós",
+            "numeroPista": 3,
+            "duracionSegundos": 300,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -35,7 +72,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/santana.jpg",
     "genero": "Jazz",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Carlos Santana",
+        "rol": "Solista",
+        "fechaIngreso": "1999-06-15",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Supernatural",
@@ -43,9 +87,24 @@
         "genero": "Jazz",
         "imagenPortada": "https://cdn.com/portadas/santana_1.jpg",
         "canciones": [
-          { "nombre": "Smooth", "numeroPista": 1, "duracionSegundos": 296, "genero": "Jazz" },
-          { "nombre": "Maria Maria", "numeroPista": 2, "duracionSegundos": 261, "genero": "Jazz" },
-          { "nombre": "Corazon Espinado", "numeroPista": 3, "duracionSegundos": 276, "genero": "Jazz" }
+          {
+            "nombre": "Smooth",
+            "numeroPista": 1,
+            "duracionSegundos": 296,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "Maria Maria",
+            "numeroPista": 2,
+            "duracionSegundos": 261,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "Corazon Espinado",
+            "numeroPista": 3,
+            "duracionSegundos": 276,
+            "genero": "Jazz"
+          }
         ]
       },
       {
@@ -54,9 +113,24 @@
         "genero": "Jazz",
         "imagenPortada": "https://cdn.com/portadas/santana_2.jpg",
         "canciones": [
-          { "nombre": "The Game of Love", "numeroPista": 1, "duracionSegundos": 254, "genero": "Jazz" },
-          { "nombre": "Nothing at All", "numeroPista": 2, "duracionSegundos": 268, "genero": "Jazz" },
-          { "nombre": "Foo Foo", "numeroPista": 3, "duracionSegundos": 328, "genero": "Jazz" }
+          {
+            "nombre": "The Game of Love",
+            "numeroPista": 1,
+            "duracionSegundos": 254,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "Nothing at All",
+            "numeroPista": 2,
+            "duracionSegundos": 268,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "Foo Foo",
+            "numeroPista": 3,
+            "duracionSegundos": 328,
+            "genero": "Jazz"
+          }
         ]
       }
     ]
@@ -66,7 +140,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/natalia.jpg",
     "genero": "Pop",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Natalia Lafourcade",
+        "rol": "Solista",
+        "fechaIngreso": "2015-03-17",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Hasta la Raíz",
@@ -74,9 +155,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/natalia_1.jpg",
         "canciones": [
-          { "nombre": "Hasta la Raíz", "numeroPista": 1, "duracionSegundos": 221, "genero": "Pop" },
-          { "nombre": "Nunca Es Suficiente", "numeroPista": 2, "duracionSegundos": 237, "genero": "Pop" },
-          { "nombre": "Lo Que Construimos", "numeroPista": 3, "duracionSegundos": 278, "genero": "Pop" }
+          {
+            "nombre": "Hasta la Raíz",
+            "numeroPista": 1,
+            "duracionSegundos": 221,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Nunca Es Suficiente",
+            "numeroPista": 2,
+            "duracionSegundos": 237,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Lo Que Construimos",
+            "numeroPista": 3,
+            "duracionSegundos": 278,
+            "genero": "Pop"
+          }
         ]
       },
       {
@@ -85,9 +181,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/natalia_2.jpg",
         "canciones": [
-          { "nombre": "De Todas las Flores", "numeroPista": 1, "duracionSegundos": 322, "genero": "Pop" },
-          { "nombre": "Pajarito Colibrí", "numeroPista": 2, "duracionSegundos": 305, "genero": "Pop" },
-          { "nombre": "Mi Manera de Querer", "numeroPista": 3, "duracionSegundos": 233, "genero": "Pop" }
+          {
+            "nombre": "De Todas las Flores",
+            "numeroPista": 1,
+            "duracionSegundos": 322,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Pajarito Colibrí",
+            "numeroPista": 2,
+            "duracionSegundos": 305,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Mi Manera de Querer",
+            "numeroPista": 3,
+            "duracionSegundos": 233,
+            "genero": "Pop"
+          }
         ]
       }
     ]
@@ -97,7 +208,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/cerati.jpg",
     "genero": "Rock",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Gustavo Cerati",
+        "rol": "Solista",
+        "fechaIngreso": "1999-06-28",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Bocanada",
@@ -105,9 +223,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/cerati_1.jpg",
         "canciones": [
-          { "nombre": "Tabú", "numeroPista": 1, "duracionSegundos": 287, "genero": "Rock" },
-          { "nombre": "Engaña", "numeroPista": 2, "duracionSegundos": 252, "genero": "Rock" },
-          { "nombre": "Puente", "numeroPista": 3, "duracionSegundos": 273, "genero": "Rock" }
+          {
+            "nombre": "Tabú",
+            "numeroPista": 1,
+            "duracionSegundos": 287,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Engaña",
+            "numeroPista": 2,
+            "duracionSegundos": 252,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Puente",
+            "numeroPista": 3,
+            "duracionSegundos": 273,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -116,9 +249,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/cerati_2.jpg",
         "canciones": [
-          { "nombre": "Crimen", "numeroPista": 1, "duracionSegundos": 228, "genero": "Rock" },
-          { "nombre": "Adiós", "numeroPista": 2, "duracionSegundos": 231, "genero": "Rock" },
-          { "nombre": "Lago en el Cielo", "numeroPista": 3, "duracionSegundos": 305, "genero": "Rock" }
+          {
+            "nombre": "Crimen",
+            "numeroPista": 1,
+            "duracionSegundos": 228,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Adiós",
+            "numeroPista": 2,
+            "duracionSegundos": 231,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Lago en el Cielo",
+            "numeroPista": 3,
+            "duracionSegundos": 305,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -128,7 +276,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/mon.jpg",
     "genero": "Rock",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Mon Laferte",
+        "rol": "Solista",
+        "fechaIngreso": "2015-08-21",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Mon Laferte Vol. 1",
@@ -136,9 +291,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/mon_1.jpg",
         "canciones": [
-          { "nombre": "Tu Falta de Querer", "numeroPista": 1, "duracionSegundos": 278, "genero": "Rock" },
-          { "nombre": "Amor Completo", "numeroPista": 2, "duracionSegundos": 242, "genero": "Rock" },
-          { "nombre": "Si Tú Me Quisieras", "numeroPista": 3, "duracionSegundos": 202, "genero": "Rock" }
+          {
+            "nombre": "Tu Falta de Querer",
+            "numeroPista": 1,
+            "duracionSegundos": 278,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Amor Completo",
+            "numeroPista": 2,
+            "duracionSegundos": 242,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Si Tú Me Quisieras",
+            "numeroPista": 3,
+            "duracionSegundos": 202,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -147,9 +317,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/mon_2.jpg",
         "canciones": [
-          { "nombre": "El Beso", "numeroPista": 1, "duracionSegundos": 178, "genero": "Rock" },
-          { "nombre": "Por Qué Me Fui a Enamorar de Ti", "numeroPista": 2, "duracionSegundos": 210, "genero": "Rock" },
-          { "nombre": "Caderas Blancas", "numeroPista": 3, "duracionSegundos": 225, "genero": "Rock" }
+          {
+            "nombre": "El Beso",
+            "numeroPista": 1,
+            "duracionSegundos": 178,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Por Qué Me Fui a Enamorar de Ti",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Caderas Blancas",
+            "numeroPista": 3,
+            "duracionSegundos": 225,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -159,7 +344,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/drexler.jpg",
     "genero": "Rock",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Jorge Drexler",
+        "rol": "Solista",
+        "fechaIngreso": "2004-03-23",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Eco",
@@ -167,9 +359,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/drexler_1.jpg",
         "canciones": [
-          { "nombre": "Eco", "numeroPista": 1, "duracionSegundos": 202, "genero": "Rock" },
-          { "nombre": "Guitarra y Vos", "numeroPista": 2, "duracionSegundos": 211, "genero": "Rock" },
-          { "nombre": "Todo Se Transforma", "numeroPista": 3, "duracionSegundos": 147, "genero": "Rock" }
+          {
+            "nombre": "Eco",
+            "numeroPista": 1,
+            "duracionSegundos": 202,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Guitarra y Vos",
+            "numeroPista": 2,
+            "duracionSegundos": 211,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Todo Se Transforma",
+            "numeroPista": 3,
+            "duracionSegundos": 147,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -178,9 +385,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/drexler_2.jpg",
         "canciones": [
-          { "nombre": "Tocarte", "numeroPista": 1, "duracionSegundos": 153, "genero": "Rock" },
-          { "nombre": "Cinturón Blanco", "numeroPista": 2, "duracionSegundos": 218, "genero": "Rock" },
-          { "nombre": "Tinta y Tiempo", "numeroPista": 3, "duracionSegundos": 190, "genero": "Rock" }
+          {
+            "nombre": "Tocarte",
+            "numeroPista": 1,
+            "duracionSegundos": 153,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Cinturón Blanco",
+            "numeroPista": 2,
+            "duracionSegundos": 218,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Tinta y Tiempo",
+            "numeroPista": 3,
+            "duracionSegundos": 190,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -190,7 +412,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/fito.jpg",
     "genero": "Rock",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Fito Páez",
+        "rol": "Solista",
+        "fechaIngreso": "1992-06-01",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "El Amor Después del Amor",
@@ -198,9 +427,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/fito_1.jpg",
         "canciones": [
-          { "nombre": "El Amor Después del Amor", "numeroPista": 1, "duracionSegundos": 310, "genero": "Rock" },
-          { "nombre": "Dos días en la vida", "numeroPista": 2, "duracionSegundos": 212, "genero": "Rock" },
-          { "nombre": "Un vestido y un amor", "numeroPista": 3, "duracionSegundos": 198, "genero": "Rock" }
+          {
+            "nombre": "El Amor Después del Amor",
+            "numeroPista": 1,
+            "duracionSegundos": 310,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Dos días en la vida",
+            "numeroPista": 2,
+            "duracionSegundos": 212,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Un vestido y un amor",
+            "numeroPista": 3,
+            "duracionSegundos": 198,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -209,9 +453,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/fito_2.jpg",
         "canciones": [
-          { "nombre": "Circo Beat", "numeroPista": 1, "duracionSegundos": 344, "genero": "Rock" },
-          { "nombre": "Mariposa Tecknicolor", "numeroPista": 2, "duracionSegundos": 223, "genero": "Rock" },
-          { "nombre": "She's Mine", "numeroPista": 3, "duracionSegundos": 250, "genero": "Rock" }
+          {
+            "nombre": "Circo Beat",
+            "numeroPista": 1,
+            "duracionSegundos": 344,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Mariposa Tecknicolor",
+            "numeroPista": 2,
+            "duracionSegundos": 223,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "She's Mine",
+            "numeroPista": 3,
+            "duracionSegundos": 250,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -221,7 +480,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/charly.jpg",
     "genero": "Rock",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Charly García",
+        "rol": "Solista",
+        "fechaIngreso": "1983-11-05",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Clics Modernos",
@@ -229,9 +495,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/charly_1.jpg",
         "canciones": [
-          { "nombre": "Nos Siguen Pegando Abajo", "numeroPista": 1, "duracionSegundos": 210, "genero": "Rock" },
-          { "nombre": "No Me Dejan Salir", "numeroPista": 2, "duracionSegundos": 260, "genero": "Rock" },
-          { "nombre": "Los Dinosaurios", "numeroPista": 3, "duracionSegundos": 208, "genero": "Rock" }
+          {
+            "nombre": "Nos Siguen Pegando Abajo",
+            "numeroPista": 1,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "No Me Dejan Salir",
+            "numeroPista": 2,
+            "duracionSegundos": 260,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Los Dinosaurios",
+            "numeroPista": 3,
+            "duracionSegundos": 208,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -240,9 +521,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/charly_2.jpg",
         "canciones": [
-          { "nombre": "Demoliendo Hoteles", "numeroPista": 1, "duracionSegundos": 138, "genero": "Rock" },
-          { "nombre": "Promesas Sobre el Bidet", "numeroPista": 2, "duracionSegundos": 166, "genero": "Rock" },
-          { "nombre": "Cerca de la Revolución", "numeroPista": 3, "duracionSegundos": 280, "genero": "Rock" }
+          {
+            "nombre": "Demoliendo Hoteles",
+            "numeroPista": 1,
+            "duracionSegundos": 138,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Promesas Sobre el Bidet",
+            "numeroPista": 2,
+            "duracionSegundos": 166,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Cerca de la Revolución",
+            "numeroPista": 3,
+            "duracionSegundos": 280,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -252,7 +548,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/spinetta.jpg",
     "genero": "Jazz",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Luis Alberto Spinetta",
+        "rol": "Solista",
+        "fechaIngreso": "1973-10-01",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Artaud",
@@ -260,9 +563,24 @@
         "genero": "Jazz",
         "imagenPortada": "https://cdn.com/portadas/spinetta_1.jpg",
         "canciones": [
-          { "nombre": "Todas las Hojas Son del Viento", "numeroPista": 1, "duracionSegundos": 132, "genero": "Jazz" },
-          { "nombre": "Cementerio Club", "numeroPista": 2, "duracionSegundos": 295, "genero": "Jazz" },
-          { "nombre": "Bajan", "numeroPista": 3, "duracionSegundos": 206, "genero": "Jazz" }
+          {
+            "nombre": "Todas las Hojas Son del Viento",
+            "numeroPista": 1,
+            "duracionSegundos": 132,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "Cementerio Club",
+            "numeroPista": 2,
+            "duracionSegundos": 295,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "Bajan",
+            "numeroPista": 3,
+            "duracionSegundos": 206,
+            "genero": "Jazz"
+          }
         ]
       },
       {
@@ -271,9 +589,24 @@
         "genero": "Jazz",
         "imagenPortada": "https://cdn.com/portadas/spinetta_2.jpg",
         "canciones": [
-          { "nombre": "Viento del Azur", "numeroPista": 1, "duracionSegundos": 278, "genero": "Jazz" },
-          { "nombre": "Telgopor", "numeroPista": 2, "duracionSegundos": 170, "genero": "Jazz" },
-          { "nombre": "A 18 min del Sol", "numeroPista": 3, "duracionSegundos": 215, "genero": "Jazz" }
+          {
+            "nombre": "Viento del Azur",
+            "numeroPista": 1,
+            "duracionSegundos": 278,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "Telgopor",
+            "numeroPista": 2,
+            "duracionSegundos": 170,
+            "genero": "Jazz"
+          },
+          {
+            "nombre": "A 18 min del Sol",
+            "numeroPista": 3,
+            "duracionSegundos": 215,
+            "genero": "Jazz"
+          }
         ]
       }
     ]
@@ -283,7 +616,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/vicentico.jpg",
     "genero": "Reggae",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Vicentico",
+        "rol": "Solista",
+        "fechaIngreso": "2002-11-19",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Vicentico",
@@ -291,9 +631,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/vicentico_1.jpg",
         "canciones": [
-          { "nombre": "Se Despierta la Ciudad", "numeroPista": 1, "duracionSegundos": 242, "genero": "Reggae" },
-          { "nombre": "Los Caminos de la Vida", "numeroPista": 2, "duracionSegundos": 178, "genero": "Reggae" },
-          { "nombre": "Algo Contigo", "numeroPista": 3, "duracionSegundos": 210, "genero": "Reggae" }
+          {
+            "nombre": "Se Despierta la Ciudad",
+            "numeroPista": 1,
+            "duracionSegundos": 242,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Los Caminos de la Vida",
+            "numeroPista": 2,
+            "duracionSegundos": 178,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Algo Contigo",
+            "numeroPista": 3,
+            "duracionSegundos": 210,
+            "genero": "Reggae"
+          }
         ]
       },
       {
@@ -302,9 +657,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/vicentico_2.jpg",
         "canciones": [
-          { "nombre": "El Árbol de la Plaza", "numeroPista": 1, "duracionSegundos": 215, "genero": "Reggae" },
-          { "nombre": "Culpable", "numeroPista": 2, "duracionSegundos": 240, "genero": "Reggae" },
-          { "nombre": "Si Me Dejas", "numeroPista": 3, "duracionSegundos": 222, "genero": "Reggae" }
+          {
+            "nombre": "El Árbol de la Plaza",
+            "numeroPista": 1,
+            "duracionSegundos": 215,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Culpable",
+            "numeroPista": 2,
+            "duracionSegundos": 240,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Si Me Dejas",
+            "numeroPista": 3,
+            "duracionSegundos": 222,
+            "genero": "Reggae"
+          }
         ]
       }
     ]
@@ -314,7 +684,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/calamaro.jpg",
     "genero": "Rock",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Andrés Calamaro",
+        "rol": "Solista",
+        "fechaIngreso": "1997-09-09",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Alta Suciedad",
@@ -322,9 +699,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/calamaro_1.jpg",
         "canciones": [
-          { "nombre": "Flaca", "numeroPista": 1, "duracionSegundos": 287, "genero": "Rock" },
-          { "nombre": "Loco", "numeroPista": 2, "duracionSegundos": 222, "genero": "Rock" },
-          { "nombre": "Alta Suciedad", "numeroPista": 3, "duracionSegundos": 267, "genero": "Rock" }
+          {
+            "nombre": "Flaca",
+            "numeroPista": 1,
+            "duracionSegundos": 287,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Loco",
+            "numeroPista": 2,
+            "duracionSegundos": 222,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Alta Suciedad",
+            "numeroPista": 3,
+            "duracionSegundos": 267,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -333,9 +725,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/calamaro_2.jpg",
         "canciones": [
-          { "nombre": "Te Quiero Igual", "numeroPista": 1, "duracionSegundos": 235, "genero": "Rock" },
-          { "nombre": "Paloma", "numeroPista": 2, "duracionSegundos": 290, "genero": "Rock" },
-          { "nombre": "Cuando Te Conocí", "numeroPista": 3, "duracionSegundos": 201, "genero": "Rock" }
+          {
+            "nombre": "Te Quiero Igual",
+            "numeroPista": 1,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Paloma",
+            "numeroPista": 2,
+            "duracionSegundos": 290,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Cuando Te Conocí",
+            "numeroPista": 3,
+            "duracionSegundos": 201,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -345,7 +752,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/juanes.jpg",
     "genero": "Pop",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Juanes",
+        "rol": "Solista",
+        "fechaIngreso": "2002-05-21",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Un Día Normal",
@@ -353,9 +767,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/juanes_1.jpg",
         "canciones": [
-          { "nombre": "A Dios le Pido", "numeroPista": 1, "duracionSegundos": 205, "genero": "Pop" },
-          { "nombre": "Es Por Ti", "numeroPista": 2, "duracionSegundos": 251, "genero": "Pop" },
-          { "nombre": "Un Día Normal", "numeroPista": 3, "duracionSegundos": 222, "genero": "Pop" }
+          {
+            "nombre": "A Dios le Pido",
+            "numeroPista": 1,
+            "duracionSegundos": 205,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Es Por Ti",
+            "numeroPista": 2,
+            "duracionSegundos": 251,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Un Día Normal",
+            "numeroPista": 3,
+            "duracionSegundos": 222,
+            "genero": "Pop"
+          }
         ]
       },
       {
@@ -364,9 +793,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/juanes_2.jpg",
         "canciones": [
-          { "nombre": "La Camisa Negra", "numeroPista": 1, "duracionSegundos": 216, "genero": "Pop" },
-          { "nombre": "Nada Valgo Sin Tu Amor", "numeroPista": 2, "duracionSegundos": 196, "genero": "Pop" },
-          { "nombre": "Volverte a Ver", "numeroPista": 3, "duracionSegundos": 217, "genero": "Pop" }
+          {
+            "nombre": "La Camisa Negra",
+            "numeroPista": 1,
+            "duracionSegundos": 216,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Nada Valgo Sin Tu Amor",
+            "numeroPista": 2,
+            "duracionSegundos": 196,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Volverte a Ver",
+            "numeroPista": 3,
+            "duracionSegundos": 217,
+            "genero": "Pop"
+          }
         ]
       }
     ]
@@ -376,7 +820,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/shakira.jpg",
     "genero": "Pop",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Shakira",
+        "rol": "Solista",
+        "fechaIngreso": "1995-10-06",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Pies Descalzos",
@@ -384,9 +835,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/shakira_1.jpg",
         "canciones": [
-          { "nombre": "Estoy Aquí", "numeroPista": 1, "duracionSegundos": 232, "genero": "Pop" },
-          { "nombre": "Antología", "numeroPista": 2, "duracionSegundos": 254, "genero": "Pop" },
-          { "nombre": "Pies Descalzos, Sueños Blancos", "numeroPista": 3, "duracionSegundos": 205, "genero": "Pop" }
+          {
+            "nombre": "Estoy Aquí",
+            "numeroPista": 1,
+            "duracionSegundos": 232,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Antología",
+            "numeroPista": 2,
+            "duracionSegundos": 254,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Pies Descalzos, Sueños Blancos",
+            "numeroPista": 3,
+            "duracionSegundos": 205,
+            "genero": "Pop"
+          }
         ]
       },
       {
@@ -395,9 +861,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/shakira_2.jpg",
         "canciones": [
-          { "nombre": "Ciega, Sordomuda", "numeroPista": 1, "duracionSegundos": 268, "genero": "Pop" },
-          { "nombre": "Inevitable", "numeroPista": 2, "duracionSegundos": 193, "genero": "Pop" },
-          { "nombre": "Ojos Así", "numeroPista": 3, "duracionSegundos": 238, "genero": "Pop" }
+          {
+            "nombre": "Ciega, Sordomuda",
+            "numeroPista": 1,
+            "duracionSegundos": 268,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Inevitable",
+            "numeroPista": 2,
+            "duracionSegundos": 193,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Ojos Así",
+            "numeroPista": 3,
+            "duracionSegundos": 238,
+            "genero": "Pop"
+          }
         ]
       }
     ]
@@ -407,7 +888,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/sanz.jpg",
     "genero": "Balada",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Alejandro Sanz",
+        "rol": "Solista",
+        "fechaIngreso": "1997-09-02",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Más",
@@ -415,9 +903,24 @@
         "genero": "Balada",
         "imagenPortada": "https://cdn.com/portadas/sanz_1.jpg",
         "canciones": [
-          { "nombre": "Y, ¿Si Fuera Ella?", "numeroPista": 1, "duracionSegundos": 322, "genero": "Balada" },
-          { "nombre": "Amiga Mía", "numeroPista": 2, "duracionSegundos": 288, "genero": "Balada" },
-          { "nombre": "Corazón Partío", "numeroPista": 3, "duracionSegundos": 341, "genero": "Balada" }
+          {
+            "nombre": "Y, ¿Si Fuera Ella?",
+            "numeroPista": 1,
+            "duracionSegundos": 322,
+            "genero": "Balada"
+          },
+          {
+            "nombre": "Amiga Mía",
+            "numeroPista": 2,
+            "duracionSegundos": 288,
+            "genero": "Balada"
+          },
+          {
+            "nombre": "Corazón Partío",
+            "numeroPista": 3,
+            "duracionSegundos": 341,
+            "genero": "Balada"
+          }
         ]
       },
       {
@@ -426,9 +929,24 @@
         "genero": "Balada",
         "imagenPortada": "https://cdn.com/portadas/sanz_2.jpg",
         "canciones": [
-          { "nombre": "Cuando Nadie Me Ve", "numeroPista": 1, "duracionSegundos": 307, "genero": "Balada" },
-          { "nombre": "Quisiera Ser", "numeroPista": 2, "duracionSegundos": 330, "genero": "Balada" },
-          { "nombre": "El Alma al Aire", "numeroPista": 3, "duracionSegundos": 351, "genero": "Balada" }
+          {
+            "nombre": "Cuando Nadie Me Ve",
+            "numeroPista": 1,
+            "duracionSegundos": 307,
+            "genero": "Balada"
+          },
+          {
+            "nombre": "Quisiera Ser",
+            "numeroPista": 2,
+            "duracionSegundos": 330,
+            "genero": "Balada"
+          },
+          {
+            "nombre": "El Alma al Aire",
+            "numeroPista": 3,
+            "duracionSegundos": 351,
+            "genero": "Balada"
+          }
         ]
       }
     ]
@@ -438,7 +956,14 @@
     "tipo": "SOLISTA",
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/julieta.jpg",
     "genero": "Pop",
-    "integrantes": [],
+    "integrantes": [
+      {
+        "nombreCompleto": "Julieta Venegas",
+        "rol": "Solista",
+        "fechaIngreso": "2003-11-11",
+        "activo": true
+      }
+    ],
     "albumes": [
       {
         "nombre": "Sí",
@@ -446,9 +971,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/julieta_1.jpg",
         "canciones": [
-          { "nombre": "Lento", "numeroPista": 1, "duracionSegundos": 236, "genero": "Pop" },
-          { "nombre": "Andar Conmigo", "numeroPista": 2, "duracionSegundos": 204, "genero": "Pop" },
-          { "nombre": "Algo Está Cambiando", "numeroPista": 3, "duracionSegundos": 244, "genero": "Pop" }
+          {
+            "nombre": "Lento",
+            "numeroPista": 1,
+            "duracionSegundos": 236,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Andar Conmigo",
+            "numeroPista": 2,
+            "duracionSegundos": 204,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Algo Está Cambiando",
+            "numeroPista": 3,
+            "duracionSegundos": 244,
+            "genero": "Pop"
+          }
         ]
       },
       {
@@ -457,9 +997,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/julieta_2.jpg",
         "canciones": [
-          { "nombre": "Me Voy", "numeroPista": 1, "duracionSegundos": 182, "genero": "Pop" },
-          { "nombre": "Limón y Sal", "numeroPista": 2, "duracionSegundos": 208, "genero": "Pop" },
-          { "nombre": "Eres Para Mí", "numeroPista": 3, "duracionSegundos": 193, "genero": "Pop" }
+          {
+            "nombre": "Me Voy",
+            "numeroPista": 1,
+            "duracionSegundos": 182,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Limón y Sal",
+            "numeroPista": 2,
+            "duracionSegundos": 208,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Eres Para Mí",
+            "numeroPista": 3,
+            "duracionSegundos": 193,
+            "genero": "Pop"
+          }
         ]
       }
     ]
@@ -470,8 +1025,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/raices_callejero.jpg",
     "genero": "Hip-Hop",
     "integrantes": [
-      { "nombreCompleto": "Diego Morales Sepa", "rol": "Baterista", "fechaIngreso": "2017-06-20", "activo": true },
-      { "nombreCompleto": "Héctor López", "rol": "Vocalista", "fechaIngreso": "2012-06-06", "activo": true }
+      {
+        "nombreCompleto": "Diego Morales Sepa",
+        "rol": "Baterista",
+        "fechaIngreso": "2017-06-20",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Héctor López",
+        "rol": "Vocalista",
+        "fechaIngreso": "2012-06-06",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -480,9 +1045,24 @@
         "genero": "Hip-Hop",
         "imagenPortada": "https://cdn.com/portadas/raices_1.jpg",
         "canciones": [
-          { "nombre": "Intro", "numeroPista": 1, "duracionSegundos": 90, "genero": "Hip-Hop" },
-          { "nombre": "Rimas Puras", "numeroPista": 2, "duracionSegundos": 200, "genero": "Hip-Hop" },
-          { "nombre": "La Calle Habla", "numeroPista": 3, "duracionSegundos": 250, "genero": "Hip-Hop" }
+          {
+            "nombre": "Intro",
+            "numeroPista": 1,
+            "duracionSegundos": 90,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Rimas Puras",
+            "numeroPista": 2,
+            "duracionSegundos": 200,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "La Calle Habla",
+            "numeroPista": 3,
+            "duracionSegundos": 250,
+            "genero": "Hip-Hop"
+          }
         ]
       },
       {
@@ -491,9 +1071,24 @@
         "genero": "Hip-Hop",
         "imagenPortada": "https://cdn.com/portadas/raices_2.jpg",
         "canciones": [
-          { "nombre": "Fuerza", "numeroPista": 1, "duracionSegundos": 180, "genero": "Hip-Hop" },
-          { "nombre": "Espejos", "numeroPista": 2, "duracionSegundos": 215, "genero": "Hip-Hop" },
-          { "nombre": "Outro", "numeroPista": 3, "duracionSegundos": 120, "genero": "Hip-Hop" }
+          {
+            "nombre": "Fuerza",
+            "numeroPista": 1,
+            "duracionSegundos": 180,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Espejos",
+            "numeroPista": 2,
+            "duracionSegundos": 215,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Outro",
+            "numeroPista": 3,
+            "duracionSegundos": 120,
+            "genero": "Hip-Hop"
+          }
         ]
       }
     ]
@@ -504,8 +1099,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/soda.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Zeta Bosio", "rol": "Bajista", "fechaIngreso": "1982-04-12", "activo": true },
-      { "nombreCompleto": "Charly Alberti", "rol": "Baterista", "fechaIngreso": "1982-04-12", "activo": true }
+      {
+        "nombreCompleto": "Zeta Bosio",
+        "rol": "Bajista",
+        "fechaIngreso": "1982-04-12",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Charly Alberti",
+        "rol": "Baterista",
+        "fechaIngreso": "1982-04-12",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -514,9 +1119,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/soda_1.jpg",
         "canciones": [
-          { "nombre": "De Música Ligera", "numeroPista": 1, "duracionSegundos": 212, "genero": "Rock" },
-          { "nombre": "El Séptimo Día", "numeroPista": 2, "duracionSegundos": 265, "genero": "Rock" },
-          { "nombre": "Un Millón de Años Luz", "numeroPista": 3, "duracionSegundos": 344, "genero": "Rock" }
+          {
+            "nombre": "De Música Ligera",
+            "numeroPista": 1,
+            "duracionSegundos": 212,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "El Séptimo Día",
+            "numeroPista": 2,
+            "duracionSegundos": 265,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Un Millón de Años Luz",
+            "numeroPista": 3,
+            "duracionSegundos": 344,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -525,9 +1145,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/soda_2.jpg",
         "canciones": [
-          { "nombre": "Ella Usó Mi Cabeza Como Un Revólver", "numeroPista": 1, "duracionSegundos": 272, "genero": "Rock" },
-          { "nombre": "Zoom", "numeroPista": 2, "duracionSegundos": 206, "genero": "Rock" },
-          { "nombre": "Paseando Por Roma", "numeroPista": 3, "duracionSegundos": 215, "genero": "Rock" }
+          {
+            "nombre": "Ella Usó Mi Cabeza Como Un Revólver",
+            "numeroPista": 1,
+            "duracionSegundos": 272,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Zoom",
+            "numeroPista": 2,
+            "duracionSegundos": 206,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Paseando Por Roma",
+            "numeroPista": 3,
+            "duracionSegundos": 215,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -538,8 +1173,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/tacvba.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Rubén Albarrán", "rol": "Vocalista", "fechaIngreso": "1989-05-27", "activo": true },
-      { "nombreCompleto": "Emmanuel del Real", "rol": "Tecladista", "fechaIngreso": "1989-05-27", "activo": true }
+      {
+        "nombreCompleto": "Rubén Albarrán",
+        "rol": "Vocalista",
+        "fechaIngreso": "1989-05-27",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Emmanuel del Real",
+        "rol": "Tecladista",
+        "fechaIngreso": "1989-05-27",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -548,9 +1193,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/tacvba_1.jpg",
         "canciones": [
-          { "nombre": "La Ingrata", "numeroPista": 1, "duracionSegundos": 210, "genero": "Rock" },
-          { "nombre": "El Ciclón", "numeroPista": 2, "duracionSegundos": 320, "genero": "Rock" },
-          { "nombre": "Las Flores", "numeroPista": 3, "duracionSegundos": 135, "genero": "Rock" }
+          {
+            "nombre": "La Ingrata",
+            "numeroPista": 1,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "El Ciclón",
+            "numeroPista": 2,
+            "duracionSegundos": 320,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Las Flores",
+            "numeroPista": 3,
+            "duracionSegundos": 135,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -559,9 +1219,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/tacvba_2.jpg",
         "canciones": [
-          { "nombre": "Eres", "numeroPista": 1, "duracionSegundos": 238, "genero": "Rock" },
-          { "nombre": "Cero y Uno", "numeroPista": 2, "duracionSegundos": 232, "genero": "Rock" },
-          { "nombre": "Medio Día", "numeroPista": 3, "duracionSegundos": 221, "genero": "Rock" }
+          {
+            "nombre": "Eres",
+            "numeroPista": 1,
+            "duracionSegundos": 238,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Cero y Uno",
+            "numeroPista": 2,
+            "duracionSegundos": 232,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Medio Día",
+            "numeroPista": 3,
+            "duracionSegundos": 221,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -572,8 +1247,19 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/enanitos.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Felipe Staiti", "rol": "Guitarrista", "fechaIngreso": "1979-11-03", "activo": true },
-      { "nombreCompleto": "Daniel Piccolo", "rol": "Baterista", "fechaIngreso": "1979-11-03", "fechaSalida": "2009-05-10", "activo": false }
+      {
+        "nombreCompleto": "Felipe Staiti",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1979-11-03",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Daniel Piccolo",
+        "rol": "Baterista",
+        "fechaIngreso": "1979-11-03",
+        "fechaSalida": "2009-05-10",
+        "activo": false
+      }
     ],
     "albumes": [
       {
@@ -582,9 +1268,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/enanitos_1.jpg",
         "canciones": [
-          { "nombre": "Lamento Boliviano", "numeroPista": 1, "duracionSegundos": 221, "genero": "Rock" },
-          { "nombre": "La Muralla Verde", "numeroPista": 2, "duracionSegundos": 160, "genero": "Rock" },
-          { "nombre": "Te Extraño Madrugada", "numeroPista": 3, "duracionSegundos": 245, "genero": "Rock" }
+          {
+            "nombre": "Lamento Boliviano",
+            "numeroPista": 1,
+            "duracionSegundos": 221,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "La Muralla Verde",
+            "numeroPista": 2,
+            "duracionSegundos": 160,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Te Extraño Madrugada",
+            "numeroPista": 3,
+            "duracionSegundos": 245,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -593,9 +1294,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/enanitos_2.jpg",
         "canciones": [
-          { "nombre": "Por Resto de Tus Días", "numeroPista": 1, "duracionSegundos": 208, "genero": "Rock" },
-          { "nombre": "Te Vi En Un Tren", "numeroPista": 2, "duracionSegundos": 232, "genero": "Rock" },
-          { "nombre": "Sumar Tiempo", "numeroPista": 3, "duracionSegundos": 190, "genero": "Rock" }
+          {
+            "nombre": "Por Resto de Tus Días",
+            "numeroPista": 1,
+            "duracionSegundos": 208,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Te Vi En Un Tren",
+            "numeroPista": 2,
+            "duracionSegundos": 232,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Sumar Tiempo",
+            "numeroPista": 3,
+            "duracionSegundos": 190,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -606,8 +1322,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/molotov.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Tito Fuentes", "rol": "Guitarrista", "fechaIngreso": "1995-09-23", "activo": true },
-      { "nombreCompleto": "Micky Huidobro", "rol": "Bajista", "fechaIngreso": "1995-09-23", "activo": true }
+      {
+        "nombreCompleto": "Tito Fuentes",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1995-09-23",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Micky Huidobro",
+        "rol": "Bajista",
+        "fechaIngreso": "1995-09-23",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -616,9 +1342,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/molotov_1.jpg",
         "canciones": [
-          { "nombre": "Gimme Tha Power", "numeroPista": 1, "duracionSegundos": 250, "genero": "Rock" },
-          { "nombre": "Frijolero", "numeroPista": 2, "duracionSegundos": 210, "genero": "Rock" },
-          { "nombre": "Voto Latino", "numeroPista": 3, "duracionSegundos": 178, "genero": "Rock" }
+          {
+            "nombre": "Gimme Tha Power",
+            "numeroPista": 1,
+            "duracionSegundos": 250,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Frijolero",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Voto Latino",
+            "numeroPista": 3,
+            "duracionSegundos": 178,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -627,9 +1368,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/molotov_2.jpg",
         "canciones": [
-          { "nombre": "Here We Kum", "numeroPista": 1, "duracionSegundos": 255, "genero": "Rock" },
-          { "nombre": "Hit Me", "numeroPista": 2, "duracionSegundos": 274, "genero": "Rock" },
-          { "nombre": "Changüich a la Chichona", "numeroPista": 3, "duracionSegundos": 198, "genero": "Rock" }
+          {
+            "nombre": "Here We Kum",
+            "numeroPista": 1,
+            "duracionSegundos": 255,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Hit Me",
+            "numeroPista": 2,
+            "duracionSegundos": 274,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Changüich a la Chichona",
+            "numeroPista": 3,
+            "duracionSegundos": 198,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -640,8 +1396,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/cadillacs.jpg",
     "genero": "Reggae",
     "integrantes": [
-      { "nombreCompleto": "Sr. Flavio", "rol": "Bajista", "fechaIngreso": "1984-12-10", "activo": true },
-      { "nombreCompleto": "Sergio Rotman", "rol": "Saxofonista", "fechaIngreso": "1985-03-15", "activo": true }
+      {
+        "nombreCompleto": "Sr. Flavio",
+        "rol": "Bajista",
+        "fechaIngreso": "1984-12-10",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Sergio Rotman",
+        "rol": "Saxofonista",
+        "fechaIngreso": "1985-03-15",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -650,9 +1416,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/cadillacs_1.jpg",
         "canciones": [
-          { "nombre": "Carnaval Toda la Vida", "numeroPista": 1, "duracionSegundos": 227, "genero": "Reggae" },
-          { "nombre": "Manuel Santillán, El León", "numeroPista": 2, "duracionSegundos": 235, "genero": "Reggae" },
-          { "nombre": "Siguiendo la Luna", "numeroPista": 3, "duracionSegundos": 278, "genero": "Reggae" }
+          {
+            "nombre": "Carnaval Toda la Vida",
+            "numeroPista": 1,
+            "duracionSegundos": 227,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Manuel Santillán, El León",
+            "numeroPista": 2,
+            "duracionSegundos": 235,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Siguiendo la Luna",
+            "numeroPista": 3,
+            "duracionSegundos": 278,
+            "genero": "Reggae"
+          }
         ]
       },
       {
@@ -661,9 +1442,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/cadillacs_2.jpg",
         "canciones": [
-          { "nombre": "Mal Bicho", "numeroPista": 1, "duracionSegundos": 245, "genero": "Reggae" },
-          { "nombre": "Las Venas Abiertas de América Latina", "numeroPista": 2, "duracionSegundos": 178, "genero": "Reggae" },
-          { "nombre": "Strawberry Fields Forever", "numeroPista": 3, "duracionSegundos": 257, "genero": "Reggae" }
+          {
+            "nombre": "Mal Bicho",
+            "numeroPista": 1,
+            "duracionSegundos": 245,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Las Venas Abiertas de América Latina",
+            "numeroPista": 2,
+            "duracionSegundos": 178,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Strawberry Fields Forever",
+            "numeroPista": 3,
+            "duracionSegundos": 257,
+            "genero": "Reggae"
+          }
         ]
       }
     ]
@@ -674,8 +1470,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/zoe.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "León Larregui", "rol": "Vocalista", "fechaIngreso": "1997-11-28", "activo": true },
-      { "nombreCompleto": "Sergio Acosta", "rol": "Guitarrista", "fechaIngreso": "1997-11-28", "activo": true }
+      {
+        "nombreCompleto": "León Larregui",
+        "rol": "Vocalista",
+        "fechaIngreso": "1997-11-28",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Sergio Acosta",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1997-11-28",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -684,9 +1490,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/zoe_1.jpg",
         "canciones": [
-          { "nombre": "Vía Láctea", "numeroPista": 1, "duracionSegundos": 248, "genero": "Rock" },
-          { "nombre": "No Me Destruyas", "numeroPista": 2, "duracionSegundos": 225, "genero": "Rock" },
-          { "nombre": "Paula", "numeroPista": 3, "duracionSegundos": 250, "genero": "Rock" }
+          {
+            "nombre": "Vía Láctea",
+            "numeroPista": 1,
+            "duracionSegundos": 248,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "No Me Destruyas",
+            "numeroPista": 2,
+            "duracionSegundos": 225,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Paula",
+            "numeroPista": 3,
+            "duracionSegundos": 250,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -695,9 +1516,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/zoe_2.jpg",
         "canciones": [
-          { "nombre": "Reptilectric", "numeroPista": 1, "duracionSegundos": 231, "genero": "Rock" },
-          { "nombre": "Nada", "numeroPista": 2, "duracionSegundos": 281, "genero": "Rock" },
-          { "nombre": "Poli", "numeroPista": 3, "duracionSegundos": 195, "genero": "Rock" }
+          {
+            "nombre": "Reptilectric",
+            "numeroPista": 1,
+            "duracionSegundos": 231,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Nada",
+            "numeroPista": 2,
+            "duracionSegundos": 281,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Poli",
+            "numeroPista": 3,
+            "duracionSegundos": 195,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -708,8 +1544,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/mana.jpg",
     "genero": "Pop",
     "integrantes": [
-      { "nombreCompleto": "Fher Olvera", "rol": "Vocalista", "fechaIngreso": "1987-06-14", "activo": true },
-      { "nombreCompleto": "Alex González", "rol": "Baterista", "fechaIngreso": "1987-06-14", "activo": true }
+      {
+        "nombreCompleto": "Fher Olvera",
+        "rol": "Vocalista",
+        "fechaIngreso": "1987-06-14",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Alex González",
+        "rol": "Baterista",
+        "fechaIngreso": "1987-06-14",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -718,9 +1564,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/mana_1.jpg",
         "canciones": [
-          { "nombre": "Oye Mi Amor", "numeroPista": 1, "duracionSegundos": 272, "genero": "Pop" },
-          { "nombre": "Vivir Sin Aire", "numeroPista": 2, "duracionSegundos": 292, "genero": "Pop" },
-          { "nombre": "Te Lloré Un Río", "numeroPista": 3, "duracionSegundos": 294, "genero": "Pop" }
+          {
+            "nombre": "Oye Mi Amor",
+            "numeroPista": 1,
+            "duracionSegundos": 272,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Vivir Sin Aire",
+            "numeroPista": 2,
+            "duracionSegundos": 292,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Te Lloré Un Río",
+            "numeroPista": 3,
+            "duracionSegundos": 294,
+            "genero": "Pop"
+          }
         ]
       },
       {
@@ -729,9 +1590,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/mana_2.jpg",
         "canciones": [
-          { "nombre": "En El Muelle de San Blas", "numeroPista": 1, "duracionSegundos": 353, "genero": "Pop" },
-          { "nombre": "Clavado En Un Bar", "numeroPista": 2, "duracionSegundos": 311, "genero": "Pop" },
-          { "nombre": "Hechicera", "numeroPista": 3, "duracionSegundos": 300, "genero": "Pop" }
+          {
+            "nombre": "En El Muelle de San Blas",
+            "numeroPista": 1,
+            "duracionSegundos": 353,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Clavado En Un Bar",
+            "numeroPista": 2,
+            "duracionSegundos": 311,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Hechicera",
+            "numeroPista": 3,
+            "duracionSegundos": 300,
+            "genero": "Pop"
+          }
         ]
       }
     ]
@@ -742,8 +1618,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/babasonicos.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Adrián Dárgelos", "rol": "Vocalista", "fechaIngreso": "1991-03-05", "activo": true },
-      { "nombreCompleto": "Diego Castellano", "rol": "Baterista", "fechaIngreso": "1991-03-05", "activo": true }
+      {
+        "nombreCompleto": "Adrián Dárgelos",
+        "rol": "Vocalista",
+        "fechaIngreso": "1991-03-05",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Diego Castellano",
+        "rol": "Baterista",
+        "fechaIngreso": "1991-03-05",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -752,9 +1638,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/baba_1.jpg",
         "canciones": [
-          { "nombre": "El Loco", "numeroPista": 1, "duracionSegundos": 185, "genero": "Rock" },
-          { "nombre": "Fizz", "numeroPista": 2, "duracionSegundos": 156, "genero": "Rock" },
-          { "nombre": "Deléctrico", "numeroPista": 3, "duracionSegundos": 262, "genero": "Rock" }
+          {
+            "nombre": "El Loco",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Fizz",
+            "numeroPista": 2,
+            "duracionSegundos": 156,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Deléctrico",
+            "numeroPista": 3,
+            "duracionSegundos": 262,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -763,9 +1664,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/baba_2.jpg",
         "canciones": [
-          { "nombre": "Carismático", "numeroPista": 1, "duracionSegundos": 166, "genero": "Rock" },
-          { "nombre": "Yegua", "numeroPista": 2, "duracionSegundos": 149, "genero": "Rock" },
-          { "nombre": "Pijamas", "numeroPista": 3, "duracionSegundos": 210, "genero": "Rock" }
+          {
+            "nombre": "Carismático",
+            "numeroPista": 1,
+            "duracionSegundos": 166,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Yegua",
+            "numeroPista": 2,
+            "duracionSegundos": 149,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Pijamas",
+            "numeroPista": 3,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -776,8 +1692,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/decadentes.jpg",
     "genero": "Reggae",
     "integrantes": [
-      { "nombreCompleto": "Cucho Parisi", "rol": "Vocalista", "fechaIngreso": "1986-09-13", "activo": true },
-      { "nombreCompleto": "Nito Montecchia", "rol": "Guitarrista", "fechaIngreso": "1986-09-13", "activo": true }
+      {
+        "nombreCompleto": "Cucho Parisi",
+        "rol": "Vocalista",
+        "fechaIngreso": "1986-09-13",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Nito Montecchia",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1986-09-13",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -786,9 +1712,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/decadentes_1.jpg",
         "canciones": [
-          { "nombre": "La Guitarra", "numeroPista": 1, "duracionSegundos": 218, "genero": "Reggae" },
-          { "nombre": "El Murguero", "numeroPista": 2, "duracionSegundos": 302, "genero": "Reggae" },
-          { "nombre": "Corazón", "numeroPista": 3, "duracionSegundos": 230, "genero": "Reggae" }
+          {
+            "nombre": "La Guitarra",
+            "numeroPista": 1,
+            "duracionSegundos": 218,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "El Murguero",
+            "numeroPista": 2,
+            "duracionSegundos": 302,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Corazón",
+            "numeroPista": 3,
+            "duracionSegundos": 230,
+            "genero": "Reggae"
+          }
         ]
       },
       {
@@ -797,9 +1738,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/decadentes_2.jpg",
         "canciones": [
-          { "nombre": "Los Piratas", "numeroPista": 1, "duracionSegundos": 204, "genero": "Reggae" },
-          { "nombre": "Cómo Me Voy a Olvidar", "numeroPista": 2, "duracionSegundos": 261, "genero": "Reggae" },
-          { "nombre": "El Gran Señor", "numeroPista": 3, "duracionSegundos": 194, "genero": "Reggae" }
+          {
+            "nombre": "Los Piratas",
+            "numeroPista": 1,
+            "duracionSegundos": 204,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Cómo Me Voy a Olvidar",
+            "numeroPista": 2,
+            "duracionSegundos": 261,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "El Gran Señor",
+            "numeroPista": 3,
+            "duracionSegundos": 194,
+            "genero": "Reggae"
+          }
         ]
       }
     ]
@@ -810,8 +1766,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/cuarteto.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Roberto Musso", "rol": "Vocalista", "fechaIngreso": "1984-08-19", "activo": true },
-      { "nombreCompleto": "Alvaro Pintos", "rol": "Baterista", "fechaIngreso": "1985-02-10", "activo": true }
+      {
+        "nombreCompleto": "Roberto Musso",
+        "rol": "Vocalista",
+        "fechaIngreso": "1984-08-19",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Alvaro Pintos",
+        "rol": "Baterista",
+        "fechaIngreso": "1985-02-10",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -820,9 +1786,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/cuarteto_1.jpg",
         "canciones": [
-          { "nombre": "Yendo a la Casa de Damián", "numeroPista": 1, "duracionSegundos": 242, "genero": "Rock" },
-          { "nombre": "Ya No Sé Qué Hacer Conmigo", "numeroPista": 2, "duracionSegundos": 241, "genero": "Rock" },
-          { "nombre": "Me Amo", "numeroPista": 3, "duracionSegundos": 204, "genero": "Rock" }
+          {
+            "nombre": "Yendo a la Casa de Damián",
+            "numeroPista": 1,
+            "duracionSegundos": 242,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Ya No Sé Qué Hacer Conmigo",
+            "numeroPista": 2,
+            "duracionSegundos": 241,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Me Amo",
+            "numeroPista": 3,
+            "duracionSegundos": 204,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -831,9 +1812,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/cuarteto_2.jpg",
         "canciones": [
-          { "nombre": "El Hijo de Hernández", "numeroPista": 1, "duracionSegundos": 239, "genero": "Rock" },
-          { "nombre": "Miguel Gritar", "numeroPista": 2, "duracionSegundos": 266, "genero": "Rock" },
-          { "nombre": "Primavera", "numeroPista": 3, "duracionSegundos": 222, "genero": "Rock" }
+          {
+            "nombre": "El Hijo de Hernández",
+            "numeroPista": 1,
+            "duracionSegundos": 239,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Miguel Gritar",
+            "numeroPista": 2,
+            "duracionSegundos": 266,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Primavera",
+            "numeroPista": 3,
+            "duracionSegundos": 222,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -844,8 +1840,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/ntvg.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Emiliano Brancciari", "rol": "Vocalista", "fechaIngreso": "1994-06-25", "activo": true },
-      { "nombreCompleto": "Martin Gil", "rol": "Trompetista", "fechaIngreso": "1994-06-25", "activo": true }
+      {
+        "nombreCompleto": "Emiliano Brancciari",
+        "rol": "Vocalista",
+        "fechaIngreso": "1994-06-25",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Martin Gil",
+        "rol": "Trompetista",
+        "fechaIngreso": "1994-06-25",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -854,9 +1860,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/ntvg_1.jpg",
         "canciones": [
-          { "nombre": "Clara", "numeroPista": 1, "duracionSegundos": 244, "genero": "Rock" },
-          { "nombre": "No Necesito Nada", "numeroPista": 2, "duracionSegundos": 196, "genero": "Rock" },
-          { "nombre": "Verte Reír", "numeroPista": 3, "duracionSegundos": 250, "genero": "Rock" }
+          {
+            "nombre": "Clara",
+            "numeroPista": 1,
+            "duracionSegundos": 244,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "No Necesito Nada",
+            "numeroPista": 2,
+            "duracionSegundos": 196,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Verte Reír",
+            "numeroPista": 3,
+            "duracionSegundos": 250,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -865,9 +1886,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/ntvg_2.jpg",
         "canciones": [
-          { "nombre": "A las Nueve", "numeroPista": 1, "duracionSegundos": 204, "genero": "Rock" },
-          { "nombre": "Tan Lejos", "numeroPista": 2, "duracionSegundos": 282, "genero": "Rock" },
-          { "nombre": "Cero a la Izquierda", "numeroPista": 3, "duracionSegundos": 247, "genero": "Rock" }
+          {
+            "nombre": "A las Nueve",
+            "numeroPista": 1,
+            "duracionSegundos": 204,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Tan Lejos",
+            "numeroPista": 2,
+            "duracionSegundos": 282,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Cero a la Izquierda",
+            "numeroPista": 3,
+            "duracionSegundos": 247,
+            "genero": "Rock"
+          }
         ]
       }
     ]
@@ -878,8 +1914,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/laley.jpg",
     "genero": "Pop",
     "integrantes": [
-      { "nombreCompleto": "Beto Cuevas", "rol": "Vocalista", "fechaIngreso": "1988-03-11", "activo": true },
-      { "nombreCompleto": "Mauricio Clavería", "rol": "Baterista", "fechaIngreso": "1988-03-11", "activo": true }
+      {
+        "nombreCompleto": "Beto Cuevas",
+        "rol": "Vocalista",
+        "fechaIngreso": "1988-03-11",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Mauricio Clavería",
+        "rol": "Baterista",
+        "fechaIngreso": "1988-03-11",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -888,9 +1934,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/laley_1.jpg",
         "canciones": [
-          { "nombre": "El Duelo", "numeroPista": 1, "duracionSegundos": 193, "genero": "Pop" },
-          { "nombre": "Dia Cero", "numeroPista": 2, "duracionSegundos": 271, "genero": "Pop" },
-          { "nombre": "Cielo el Mercado", "numeroPista": 3, "duracionSegundos": 228, "genero": "Pop" }
+          {
+            "nombre": "El Duelo",
+            "numeroPista": 1,
+            "duracionSegundos": 193,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Dia Cero",
+            "numeroPista": 2,
+            "duracionSegundos": 271,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Cielo el Mercado",
+            "numeroPista": 3,
+            "duracionSegundos": 228,
+            "genero": "Pop"
+          }
         ]
       },
       {
@@ -899,9 +1960,24 @@
         "genero": "Pop",
         "imagenPortada": "https://cdn.com/portadas/laley_2.jpg",
         "canciones": [
-          { "nombre": "Aquí", "numeroPista": 1, "duracionSegundos": 286, "genero": "Pop" },
-          { "nombre": "Fuera de Mí", "numeroPista": 2, "duracionSegundos": 279, "genero": "Pop" },
-          { "nombre": "Eternidad", "numeroPista": 3, "duracionSegundos": 241, "genero": "Pop" }
+          {
+            "nombre": "Aquí",
+            "numeroPista": 1,
+            "duracionSegundos": 286,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Fuera de Mí",
+            "numeroPista": 2,
+            "duracionSegundos": 279,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Eternidad",
+            "numeroPista": 3,
+            "duracionSegundos": 241,
+            "genero": "Pop"
+          }
         ]
       }
     ]
@@ -912,8 +1988,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/panteon.jpg",
     "genero": "Reggae",
     "integrantes": [
-      { "nombreCompleto": "Dr. Shenka", "rol": "Vocalista", "fechaIngreso": "1995-05-01", "activo": true },
-      { "nombreCompleto": "Gorri", "rol": "Guitarrista", "fechaIngreso": "1995-05-01", "activo": true }
+      {
+        "nombreCompleto": "Dr. Shenka",
+        "rol": "Vocalista",
+        "fechaIngreso": "1995-05-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Gorri",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1995-05-01",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -922,9 +2008,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/panteon_1.jpg",
         "canciones": [
-          { "nombre": "La Dosis Perfecta", "numeroPista": 1, "duracionSegundos": 262, "genero": "Reggae" },
-          { "nombre": "Asesinos", "numeroPista": 2, "duracionSegundos": 195, "genero": "Reggae" },
-          { "nombre": "Pequeño Tratado de un Adiós", "numeroPista": 3, "duracionSegundos": 240, "genero": "Reggae" }
+          {
+            "nombre": "La Dosis Perfecta",
+            "numeroPista": 1,
+            "duracionSegundos": 262,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Asesinos",
+            "numeroPista": 2,
+            "duracionSegundos": 195,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Pequeño Tratado de un Adiós",
+            "numeroPista": 3,
+            "duracionSegundos": 240,
+            "genero": "Reggae"
+          }
         ]
       },
       {
@@ -933,9 +2034,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/panteon_2.jpg",
         "canciones": [
-          { "nombre": "La Carencia", "numeroPista": 1, "duracionSegundos": 215, "genero": "Reggae" },
-          { "nombre": "Esta Noche", "numeroPista": 2, "duracionSegundos": 184, "genero": "Reggae" },
-          { "nombre": "Vendedora de Caricias", "numeroPista": 3, "duracionSegundos": 235, "genero": "Reggae" }
+          {
+            "nombre": "La Carencia",
+            "numeroPista": 1,
+            "duracionSegundos": 215,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Esta Noche",
+            "numeroPista": 2,
+            "duracionSegundos": 184,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Vendedora de Caricias",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Reggae"
+          }
         ]
       }
     ]
@@ -946,8 +2062,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/cultura.jpg",
     "genero": "Reggae",
     "integrantes": [
-      { "nombreCompleto": "Willy Rodríguez", "rol": "Bajista", "fechaIngreso": "1996-08-22", "activo": true },
-      { "nombreCompleto": "Omar Silva", "rol": "Guitarrista", "fechaIngreso": "1996-08-22", "activo": true }
+      {
+        "nombreCompleto": "Willy Rodríguez",
+        "rol": "Bajista",
+        "fechaIngreso": "1996-08-22",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Omar Silva",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1996-08-22",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -956,9 +2082,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/cultura_1.jpg",
         "canciones": [
-          { "nombre": "Baja la Tensión", "numeroPista": 1, "duracionSegundos": 230, "genero": "Reggae" },
-          { "nombre": "La Complicidad", "numeroPista": 2, "duracionSegundos": 275, "genero": "Reggae" },
-          { "nombre": "Ilegal", "numeroPista": 3, "duracionSegundos": 305, "genero": "Reggae" }
+          {
+            "nombre": "Baja la Tensión",
+            "numeroPista": 1,
+            "duracionSegundos": 230,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "La Complicidad",
+            "numeroPista": 2,
+            "duracionSegundos": 275,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Ilegal",
+            "numeroPista": 3,
+            "duracionSegundos": 305,
+            "genero": "Reggae"
+          }
         ]
       },
       {
@@ -967,9 +2108,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/cultura_2.jpg",
         "canciones": [
-          { "nombre": "Llevarte Allí", "numeroPista": 1, "duracionSegundos": 241, "genero": "Reggae" },
-          { "nombre": "Caracoles", "numeroPista": 2, "duracionSegundos": 298, "genero": "Reggae" },
-          { "nombre": "Herida Mortal", "numeroPista": 3, "duracionSegundos": 222, "genero": "Reggae" }
+          {
+            "nombre": "Llevarte Allí",
+            "numeroPista": 1,
+            "duracionSegundos": 241,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Caracoles",
+            "numeroPista": 2,
+            "duracionSegundos": 298,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Herida Mortal",
+            "numeroPista": 3,
+            "duracionSegundos": 222,
+            "genero": "Reggae"
+          }
         ]
       }
     ]
@@ -980,8 +2136,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/gondwana.jpg",
     "genero": "Reggae",
     "integrantes": [
-      { "nombreCompleto": "I-Locks Labbé", "rol": "Bajista", "fechaIngreso": "1987-05-10", "activo": true },
-      { "nombreCompleto": "Kiko Brunser", "rol": "Tecladista", "fechaIngreso": "1987-05-10", "activo": true }
+      {
+        "nombreCompleto": "I-Locks Labbé",
+        "rol": "Bajista",
+        "fechaIngreso": "1987-05-10",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Kiko Brunser",
+        "rol": "Tecladista",
+        "fechaIngreso": "1987-05-10",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -990,9 +2156,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/gondwana_1.jpg",
         "canciones": [
-          { "nombre": "Sentimiento Original", "numeroPista": 1, "duracionSegundos": 252, "genero": "Reggae" },
-          { "nombre": "Armonía de Amor", "numeroPista": 2, "duracionSegundos": 230, "genero": "Reggae" },
-          { "nombre": "Parrandero", "numeroPista": 3, "duracionSegundos": 200, "genero": "Reggae" }
+          {
+            "nombre": "Sentimiento Original",
+            "numeroPista": 1,
+            "duracionSegundos": 252,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Armonía de Amor",
+            "numeroPista": 2,
+            "duracionSegundos": 230,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Parrandero",
+            "numeroPista": 3,
+            "duracionSegundos": 200,
+            "genero": "Reggae"
+          }
         ]
       },
       {
@@ -1001,9 +2182,24 @@
         "genero": "Reggae",
         "imagenPortada": "https://cdn.com/portadas/gondwana_2.jpg",
         "canciones": [
-          { "nombre": "Ignorancia", "numeroPista": 1, "duracionSegundos": 240, "genero": "Reggae" },
-          { "nombre": "Cha Cha", "numeroPista": 2, "duracionSegundos": 210, "genero": "Reggae" },
-          { "nombre": "Reggae Music", "numeroPista": 3, "duracionSegundos": 190, "genero": "Reggae" }
+          {
+            "nombre": "Ignorancia",
+            "numeroPista": 1,
+            "duracionSegundos": 240,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Cha Cha",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Reggae"
+          },
+          {
+            "nombre": "Reggae Music",
+            "numeroPista": 3,
+            "duracionSegundos": 190,
+            "genero": "Reggae"
+          }
         ]
       }
     ]
@@ -1014,8 +2210,18 @@
     "imagen": "https://cdn.bibliotecamusical3.com/artistas/aterciopelados.jpg",
     "genero": "Rock",
     "integrantes": [
-      { "nombreCompleto": "Andrea Echeverri", "rol": "Vocalista", "fechaIngreso": "1992-04-01", "activo": true },
-      { "nombreCompleto": "Héctor Buitrago", "rol": "Bajista", "fechaIngreso": "1992-04-01", "activo": true }
+      {
+        "nombreCompleto": "Andrea Echeverri",
+        "rol": "Vocalista",
+        "fechaIngreso": "1992-04-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Héctor Buitrago",
+        "rol": "Bajista",
+        "fechaIngreso": "1992-04-01",
+        "activo": true
+      }
     ],
     "albumes": [
       {
@@ -1024,9 +2230,24 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/aterciopelados_1.jpg",
         "canciones": [
-          { "nombre": "Bolero Falaz", "numeroPista": 1, "duracionSegundos": 228, "genero": "Rock" },
-          { "nombre": "Florecita Rockera", "numeroPista": 2, "duracionSegundos": 181, "genero": "Rock" },
-          { "nombre": "Candela", "numeroPista": 3, "duracionSegundos": 210, "genero": "Rock" }
+          {
+            "nombre": "Bolero Falaz",
+            "numeroPista": 1,
+            "duracionSegundos": 228,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Florecita Rockera",
+            "numeroPista": 2,
+            "duracionSegundos": 181,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Candela",
+            "numeroPista": 3,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          }
         ]
       },
       {
@@ -1035,9 +2256,2363 @@
         "genero": "Rock",
         "imagenPortada": "https://cdn.com/portadas/aterciopelados_2.jpg",
         "canciones": [
-          { "nombre": "Cosita Seria", "numeroPista": 1, "duracionSegundos": 195, "genero": "Rock" },
-          { "nombre": "Baracunátana", "numeroPista": 2, "duracionSegundos": 210, "genero": "Rock" },
-          { "nombre": "La Pipa de la Paz", "numeroPista": 3, "duracionSegundos": 180, "genero": "Rock" }
+          {
+            "nombre": "Cosita Seria",
+            "numeroPista": 1,
+            "duracionSegundos": 195,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Baracunátana",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "La Pipa de la Paz",
+            "numeroPista": 3,
+            "duracionSegundos": 180,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Natanael Cano",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Corridos",
+    "integrantes": [
+      {
+        "nombreCompleto": "Natanael Cano",
+        "rol": "Solista",
+        "fechaIngreso": "2023-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Nata Montana",
+        "fechaLanzamiento": "2023-01-01",
+        "genero": "Corridos",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Mi Bello Ángel",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "Pacas de Billetes",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "Mi Bello Ángel (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Corridos"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2025-06-01",
+        "genero": "Corridos",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Mi Bello Ángel (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "Pacas de Billetes (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Corridos"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Frédéric Chopin",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Clasica",
+    "integrantes": [
+      {
+        "nombreCompleto": "Frédéric Chopin",
+        "rol": "Solista",
+        "fechaIngreso": "1832-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Nocturnes, Op. 9",
+        "fechaLanzamiento": "1832-01-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Nocturne No. 2 in E-flat Major, Op. 9 No. 2",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Nocturne No. 1 in B-flat Minor, Op. 9 No. 1",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Nocturne No. 2 in E-flat Major, Op. 9 No. 2 (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1834-06-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Nocturne No. 2 in E-flat Major, Op. 9 No. 2 (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Nocturne No. 1 in B-flat Minor, Op. 9 No. 1 (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Ludwig van Beethoven",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Clasica",
+    "integrantes": [
+      {
+        "nombreCompleto": "Ludwig van Beethoven",
+        "rol": "Solista",
+        "fechaIngreso": "1824-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Symphony No. 9",
+        "fechaLanzamiento": "1824-01-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Ode to Joy (Finale)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Second Movement (Molto Vivace)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Ode to Joy (Finale) (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1826-06-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Ode to Joy (Finale) (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Second Movement (Molto Vivace) (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Wolfgang Amadeus Mozart",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Clasica",
+    "integrantes": [
+      {
+        "nombreCompleto": "Wolfgang Amadeus Mozart",
+        "rol": "Solista",
+        "fechaIngreso": "1791-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Requiem in D Minor, K. 626",
+        "fechaLanzamiento": "1791-01-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Lacrimosa",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Dies Irae",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Lacrimosa (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1793-06-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Lacrimosa (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Dies Irae (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Antonio Vivaldi",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Clasica",
+    "integrantes": [
+      {
+        "nombreCompleto": "Antonio Vivaldi",
+        "rol": "Solista",
+        "fechaIngreso": "1725-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "The Four Seasons",
+        "fechaLanzamiento": "1725-01-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Spring (La Primavera)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Winter (L'Inverno)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Spring (La Primavera) (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1727-06-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Spring (La Primavera) (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Winter (L'Inverno) (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Sergei Rachmaninoff",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Clasica",
+    "integrantes": [
+      {
+        "nombreCompleto": "Sergei Rachmaninoff",
+        "rol": "Solista",
+        "fechaIngreso": "1901-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Piano Concerto No. 2",
+        "fechaLanzamiento": "1901-01-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Moderato",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Adagio Sostenuto",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Moderato (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1903-06-01",
+        "genero": "Clasica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Moderato (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Adagio Sostenuto (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Clasica"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Clasica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Milo J",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Milo J",
+        "rol": "Solista",
+        "fechaIngreso": "2023-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "111",
+        "fechaLanzamiento": "2023-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "M.A.I.",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Rara Vez",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "M.A.I. (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2025-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "M.A.I. (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Rara Vez (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Bad Bunny",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Reggaeton",
+    "integrantes": [
+      {
+        "nombreCompleto": "Bad Bunny",
+        "rol": "Solista",
+        "fechaIngreso": "2022-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Un Verano Sin Ti",
+        "fechaLanzamiento": "2022-01-01",
+        "genero": "Reggaeton",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Tití Me Preguntó",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Me Porto Bonito",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Tití Me Preguntó (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Reggaeton"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2024-06-01",
+        "genero": "Reggaeton",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Tití Me Preguntó (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Me Porto Bonito (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Reggaeton"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Junior H",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Corridos",
+    "integrantes": [
+      {
+        "nombreCompleto": "Junior H",
+        "rol": "Solista",
+        "fechaIngreso": "2023-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "$ad Boyz 4 Life II",
+        "fechaLanzamiento": "2023-01-01",
+        "genero": "Corridos",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Y Lloro",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "El Rescate",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "Y Lloro (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Corridos"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2025-06-01",
+        "genero": "Corridos",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Y Lloro (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "El Rescate (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Corridos"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Corridos"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Kendrick Lamar",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Kendrick Lamar",
+        "rol": "Solista",
+        "fechaIngreso": "2017-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "DAMN.",
+        "fechaLanzamiento": "2017-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "HUMBLE.",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "DNA.",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "HUMBLE. (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2019-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "HUMBLE. (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "DNA. (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Travis Scott",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Travis Scott",
+        "rol": "Solista",
+        "fechaIngreso": "2018-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "ASTROWORLD",
+        "fechaLanzamiento": "2018-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "SICKO MODE",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "STARGAZING",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "SICKO MODE (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2020-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "SICKO MODE (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "STARGAZING (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Mac Miller",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Mac Miller",
+        "rol": "Solista",
+        "fechaIngreso": "2018-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Swimming",
+        "fechaLanzamiento": "2018-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Self Care",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Come Back to Earth",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Self Care (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2020-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Self Care (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Come Back to Earth (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Tyler, The Creator",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Tyler, The Creator",
+        "rol": "Solista",
+        "fechaIngreso": "2019-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "IGOR",
+        "fechaLanzamiento": "2019-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "EARFQUAKE",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "A BOY IS A GUN",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "EARFQUAKE (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2021-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "EARFQUAKE (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "A BOY IS A GUN (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "The Weeknd",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "R&B",
+    "integrantes": [
+      {
+        "nombreCompleto": "The Weeknd",
+        "rol": "Solista",
+        "fechaIngreso": "2020-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "After Hours",
+        "fechaLanzamiento": "2020-01-01",
+        "genero": "R&B",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Blinding Lights",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "R&B"
+          },
+          {
+            "nombre": "Save Your Tears",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "R&B"
+          },
+          {
+            "nombre": "Blinding Lights (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "R&B"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2022-06-01",
+        "genero": "R&B",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Blinding Lights (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "R&B"
+          },
+          {
+            "nombre": "Save Your Tears (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "R&B"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "R&B"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Michael Jackson",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Pop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Michael Jackson",
+        "rol": "Solista",
+        "fechaIngreso": "1982-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Thriller",
+        "fechaLanzamiento": "1982-01-01",
+        "genero": "Pop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Billie Jean",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Beat It",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Billie Jean (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Pop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1984-06-01",
+        "genero": "Pop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Billie Jean (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Beat It (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Pop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Eminem",
+    "tipo": "SOLISTA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Eminem",
+        "rol": "Solista",
+        "fechaIngreso": "2000-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "The Marshall Mathers LP",
+        "fechaLanzamiento": "2000-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "The Real Slim Shady",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Stan",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "The Real Slim Shady (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2002-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "The Real Slim Shady (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Stan (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Twenty One Pilots",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Pop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Tyler Joseph",
+        "rol": "Vocalista",
+        "fechaIngreso": "2009-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Josh Dun",
+        "rol": "Baterista",
+        "fechaIngreso": "2011-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Blurryface",
+        "fechaLanzamiento": "2015-01-01",
+        "genero": "Pop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Stressed Out",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Ride",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Stressed Out (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Pop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2017-06-01",
+        "genero": "Pop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Stressed Out (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Ride (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Pop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Calle 13",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "René Pérez (Residente)",
+        "rol": "Vocalista",
+        "fechaIngreso": "2004-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Eduardo Cabra (Visitante)",
+        "rol": "Multi-instrumentista",
+        "fechaIngreso": "2004-01-01",
+        "fechaSalida": "2015-01-01",
+        "activo": false
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Entren los que quieran",
+        "fechaLanzamiento": "2010-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Latinoamérica",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Calma Pueblo",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Latinoamérica (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2012-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Latinoamérica (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Calma Pueblo (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Arctic Monkeys",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Indie",
+    "integrantes": [
+      {
+        "nombreCompleto": "Alex Turner",
+        "rol": "Vocalista",
+        "fechaIngreso": "2002-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Matt Helders",
+        "rol": "Baterista",
+        "fechaIngreso": "2002-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Jamie Cook",
+        "rol": "Guitarrista",
+        "fechaIngreso": "2002-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "AM",
+        "fechaLanzamiento": "2013-01-01",
+        "genero": "Indie",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Do I Wanna Know?",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "Why'd You Only Call Me When You're High?",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "Do I Wanna Know? (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Indie"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2015-06-01",
+        "genero": "Indie",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Do I Wanna Know? (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "Why'd You Only Call Me When You're High? (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Indie"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Green Day",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Punk",
+    "integrantes": [
+      {
+        "nombreCompleto": "Billie Joe Armstrong",
+        "rol": "Vocalista",
+        "fechaIngreso": "1987-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Mike Dirnt",
+        "rol": "Bajista",
+        "fechaIngreso": "1987-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Tré Cool",
+        "rol": "Baterista",
+        "fechaIngreso": "1990-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "American Idiot",
+        "fechaLanzamiento": "2004-01-01",
+        "genero": "Punk",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "American Idiot",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Punk"
+          },
+          {
+            "nombre": "Boulevard of Broken Dreams",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Punk"
+          },
+          {
+            "nombre": "American Idiot (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Punk"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2006-06-01",
+        "genero": "Punk",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "American Idiot (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Punk"
+          },
+          {
+            "nombre": "Boulevard of Broken Dreams (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Punk"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Punk"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Radiohead",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Rock",
+    "integrantes": [
+      {
+        "nombreCompleto": "Thom Yorke",
+        "rol": "Vocalista",
+        "fechaIngreso": "1985-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Jonny Greenwood",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1985-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Colin Greenwood",
+        "rol": "Bajista",
+        "fechaIngreso": "1985-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "OK Computer",
+        "fechaLanzamiento": "1997-01-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Karma Police",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "No Surprises",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Karma Police (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1999-06-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Karma Police (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "No Surprises (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Coldplay",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Pop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Chris Martin",
+        "rol": "Vocalista",
+        "fechaIngreso": "1996-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Jonny Buckland",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1996-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Will Champion",
+        "rol": "Baterista",
+        "fechaIngreso": "1996-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "A Rush of Blood to the Head",
+        "fechaLanzamiento": "2002-01-01",
+        "genero": "Pop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "The Scientist",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Clocks",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "The Scientist (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Pop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2004-06-01",
+        "genero": "Pop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "The Scientist (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Clocks (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Pop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Pop"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Daft Punk",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Electronica",
+    "integrantes": [
+      {
+        "nombreCompleto": "Thomas Bangalter",
+        "rol": "Productor",
+        "fechaIngreso": "1993-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Guy-Manuel de Homem-Christo",
+        "rol": "Productor",
+        "fechaIngreso": "1993-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Random Access Memories",
+        "fechaLanzamiento": "2013-01-01",
+        "genero": "Electronica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Get Lucky",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Electronica"
+          },
+          {
+            "nombre": "Instant Crush",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Electronica"
+          },
+          {
+            "nombre": "Get Lucky (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Electronica"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2015-06-01",
+        "genero": "Electronica",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Get Lucky (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Electronica"
+          },
+          {
+            "nombre": "Instant Crush (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Electronica"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Electronica"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Imagine Dragons",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Rock",
+    "integrantes": [
+      {
+        "nombreCompleto": "Dan Reynolds",
+        "rol": "Vocalista",
+        "fechaIngreso": "2008-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Wayne Sermon",
+        "rol": "Guitarrista",
+        "fechaIngreso": "2008-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Ben McKee",
+        "rol": "Bajista",
+        "fechaIngreso": "2008-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Night Visions",
+        "fechaLanzamiento": "2012-01-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Radioactive",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Demons",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Radioactive (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2014-06-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Radioactive (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Demons (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Linkin Park",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Rock",
+    "integrantes": [
+      {
+        "nombreCompleto": "Chester Bennington",
+        "rol": "Vocalista",
+        "fechaIngreso": "1999-01-01",
+        "fechaSalida": "2017-07-20",
+        "activo": false
+      },
+      {
+        "nombreCompleto": "Mike Shinoda",
+        "rol": "Vocalista",
+        "fechaIngreso": "1996-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Brad Delson",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1996-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Hybrid Theory",
+        "fechaLanzamiento": "2000-01-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "In the End",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Crawling",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "In the End (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2002-06-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "In the End (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Crawling (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Nirvana",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Rock",
+    "integrantes": [
+      {
+        "nombreCompleto": "Kurt Cobain",
+        "rol": "Vocalista",
+        "fechaIngreso": "1987-01-01",
+        "fechaSalida": "1994-04-05",
+        "activo": false
+      },
+      {
+        "nombreCompleto": "Krist Novoselic",
+        "rol": "Bajista",
+        "fechaIngreso": "1987-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Dave Grohl",
+        "rol": "Baterista",
+        "fechaIngreso": "1990-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Nevermind",
+        "fechaLanzamiento": "1991-01-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Smells Like Teen Spirit",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Come As You Are",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Smells Like Teen Spirit (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1993-06-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Smells Like Teen Spirit (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Come As You Are (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Queen",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Rock",
+    "integrantes": [
+      {
+        "nombreCompleto": "Freddie Mercury",
+        "rol": "Vocalista",
+        "fechaIngreso": "1970-01-01",
+        "fechaSalida": "1991-11-24",
+        "activo": false
+      },
+      {
+        "nombreCompleto": "Brian May",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1970-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Roger Taylor",
+        "rol": "Baterista",
+        "fechaIngreso": "1970-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "John Deacon",
+        "rol": "Bajista",
+        "fechaIngreso": "1971-01-01",
+        "fechaSalida": "1997-01-01",
+        "activo": false
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "A Night at the Opera",
+        "fechaLanzamiento": "1975-01-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Bohemian Rhapsody",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "You're My Best Friend",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bohemian Rhapsody (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1977-06-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Bohemian Rhapsody (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "You're My Best Friend (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Gorillaz",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Indie",
+    "integrantes": [
+      {
+        "nombreCompleto": "Damon Albarn",
+        "rol": "Vocalista",
+        "fechaIngreso": "1998-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Jamie Hewlett",
+        "rol": "Arte visual",
+        "fechaIngreso": "1998-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Demon Days",
+        "fechaLanzamiento": "2005-01-01",
+        "genero": "Indie",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Feel Good Inc.",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "DARE",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "Feel Good Inc. (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Indie"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2007-06-01",
+        "genero": "Indie",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Feel Good Inc. (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "DARE (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Indie"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Indie"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Pink Floyd",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Rock",
+    "integrantes": [
+      {
+        "nombreCompleto": "David Gilmour",
+        "rol": "Guitarrista",
+        "fechaIngreso": "1968-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Nick Mason",
+        "rol": "Baterista",
+        "fechaIngreso": "1965-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Roger Waters",
+        "rol": "Bajista",
+        "fechaIngreso": "1965-01-01",
+        "fechaSalida": "1985-01-01",
+        "activo": false
+      },
+      {
+        "nombreCompleto": "Richard Wright",
+        "rol": "Teclista",
+        "fechaIngreso": "1965-01-01",
+        "fechaSalida": "2008-09-15",
+        "activo": false
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "The Dark Side of the Moon",
+        "fechaLanzamiento": "1973-01-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Time",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Money",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Time (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "1975-06-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Time (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Money (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Red Hot Chili Peppers",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Rock",
+    "integrantes": [
+      {
+        "nombreCompleto": "Anthony Kiedis",
+        "rol": "Vocalista",
+        "fechaIngreso": "1983-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Flea",
+        "rol": "Bajista",
+        "fechaIngreso": "1983-01-01",
+        "activo": true
+      },
+      {
+        "nombreCompleto": "Chad Smith",
+        "rol": "Baterista",
+        "fechaIngreso": "1988-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Californication",
+        "fechaLanzamiento": "1999-01-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Californication",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Scar Tissue",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Californication (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2001-06-01",
+        "genero": "Rock",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Californication (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Scar Tissue (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Rock"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Rock"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Tainy",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Reggaeton",
+    "integrantes": [
+      {
+        "nombreCompleto": "Tainy (Marco Masís)",
+        "rol": "Productor",
+        "fechaIngreso": "2016-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "DATA",
+        "fechaLanzamiento": "2023-01-01",
+        "genero": "Reggaeton",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Colmillo",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Lo Siento BB:/",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Colmillo (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Reggaeton"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2025-06-01",
+        "genero": "Reggaeton",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "Colmillo (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Lo Siento BB:/ (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Reggaeton"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Reggaeton"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "WOS",
+    "tipo": "BANDA",
+    "imagen": "",
+    "genero": "Hip-Hop",
+    "integrantes": [
+      {
+        "nombreCompleto": "Valentín Oliva (WOS)",
+        "rol": "Vocalista",
+        "fechaIngreso": "2018-01-01",
+        "activo": true
+      }
+    ],
+    "albumes": [
+      {
+        "nombre": "Oscuro Éxtasis",
+        "fechaLanzamiento": "2021-01-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "MELÓN VINO",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "CANGURO",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "MELÓN VINO (Reprise)",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
+        ]
+      },
+      {
+        "nombre": "Grandes Éxitos",
+        "fechaLanzamiento": "2023-06-01",
+        "genero": "Hip-Hop",
+        "imagenPortada": "",
+        "canciones": [
+          {
+            "nombre": "MELÓN VINO (En Vivo)",
+            "numeroPista": 1,
+            "duracionSegundos": 185,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "CANGURO (En Vivo)",
+            "numeroPista": 2,
+            "duracionSegundos": 210,
+            "genero": "Hip-Hop"
+          },
+          {
+            "nombre": "Bonus Track",
+            "numeroPista": 3,
+            "duracionSegundos": 235,
+            "genero": "Hip-Hop"
+          }
         ]
       }
     ]

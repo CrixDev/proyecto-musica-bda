@@ -93,10 +93,13 @@ class ServiciosNegocioTest {
     }
 
     @Test
-    void solistaNoPuedeTenerIntegrantes() {
-        assertThrows(ValidacionException.class, () -> servicios.artistas().crear(new ArtistaDTO(
-                null, TipoArtista.SOLISTA, "Solista Con Banda", null, "Rock", null,
-                List.of(new IntegranteDTO("Fulano", "Voz", LocalDate.of(2020, 1, 1), null, true)))));
+    void solistaPuedeAgregarseComoIntegrante() {
+        // Regla nueva: un solista puede registrarse a si mismo como integrante.
+        ArtistaDTO solista = servicios.artistas().crear(new ArtistaDTO(
+                null, TipoArtista.SOLISTA, "Solista Con Integrante", null, "Rock", null,
+                List.of(new IntegranteDTO("Solista Con Integrante", "Solista", LocalDate.of(2020, 1, 1), null, true))));
+        assertEquals(1, solista.integrantes().size());
+        assertEquals("Solista Con Integrante", solista.integrantes().get(0).nombreCompleto());
     }
 
     @Test

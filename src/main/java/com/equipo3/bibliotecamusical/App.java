@@ -45,6 +45,25 @@ public final class App {
         InicializadorBd.inicializar(ConexionMongo.getBaseDatos());
         Servicios servicios = new Servicios(ConexionMongo.getBaseDatos());
 
+        sembrarSiVacio(servicios);
+
         VentanaPrincipal.mostrarLoginSimulado(servicios);
+    }
+
+    /**
+     * Carga los datos de {@code artistas.json} automáticamente al iniciar, pero
+     * solo si la base de datos está vacía (es idempotente: en arranques
+     * posteriores no vuelve a insertar ni duplica).
+     */
+    private static void sembrarSiVacio(Servicios servicios) {
+        try {
+            if (servicios.artistas().contar() == 0) {
+                servicios.cargaMasiva().ejecutarCarga();
+            }
+        } catch (RuntimeException e) {
+            JOptionPane.showMessageDialog(null,
+                    "No se pudieron cargar los datos iniciales:\n" + e.getMessage(),
+                    "Biblioteca Musical", JOptionPane.WARNING_MESSAGE);
+        }
     }
 }

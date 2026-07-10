@@ -181,7 +181,10 @@ public class VistaArtistaPanel extends JPanel {
         cuerpo.setBorder(BorderFactory.createEmptyBorder(24, 32, 32, 32));
         cuerpo.add(construirSeccionAlbumes(albumes), BorderLayout.CENTER);
 
-        if (artista.tipo() == TipoArtista.BANDA) {
+        // Se muestra el panel de integrantes para cualquier artista que tenga
+        // integrantes: una banda con sus miembros o un solista que se registra a
+        // si mismo como integrante.
+        if (artista.integrantes() != null && !artista.integrantes().isEmpty()) {
             JPanel integrantes = construirSeccionIntegrantes(artista.integrantes());
             integrantes.setPreferredSize(new Dimension(240, 0));
             cuerpo.add(integrantes, BorderLayout.EAST);
