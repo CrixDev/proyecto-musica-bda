@@ -50,7 +50,7 @@ public final class DemoVistas {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(DemoVistas::construirVentana);
     }
-
+    
     private static void construirVentana() {
         JFrame frame = new JFrame("Biblioteca Musical - Demo vistas (artista / album)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -133,10 +133,7 @@ public final class DemoVistas {
         return new Servicios(ConexionMongo.getBaseDatos());
     }
 
-    /**
-     * Datos de muestra usados cuando no hay Mongo corriendo, inspirados en el
-     * storyboard de Figma.
-     */
+    
     private static final class DatosMuestra {
 
         final ArtistaDTO artista;
@@ -175,4 +172,6 @@ public final class DemoVistas {
             return new DatosMuestra(artista, List.of(am, theView));
         }
     }
+    
+    
 }

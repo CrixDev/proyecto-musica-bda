@@ -127,4 +127,41 @@ public class ArtistaService {
     private List<ArtistaDTO> mapear(List<Artista> artistas) {
         return artistas.stream().map(ArtistaMapper::aDTO).collect(Collectors.toList());
     }
+    
+    /**
+     * Inserta un lote de entidades Artista previamente validadas.
+     */
+    public void insertarLoteArtistas(List<Artista> artistas) {
+        if (artistas == null || artistas.isEmpty()) {
+            throw new ValidacionException("La lista de artistas está vacía");
+        }
+
+        // Regla: 30 registros estrictos de tu parte
+        if (artistas.size() < 30) {
+            throw new ValidacionException("Se requieren exactamente 30 registros. Recibidos: " + artistas.size());
+        }
+
+        // Regla: Mitad y mitad
+        long countSolistas = artistas.stream().filter(a -> a.getTipo() == TipoArtista.SOLISTA).count();
+        long countBandas = artistas.stream().filter(a -> a.getTipo() == TipoArtista.BANDA).count();
+
+        if (countSolistas < 15 || countBandas < 15) {
+            throw new ValidacionException("La inserción debe ser 15 solistas y 15 bandas.");
+        }
+
+        // Validar reglas internas y duplicados antes de tocar la BD
+        for (Artista artista : artistas) {
+            ValidadorArtista.validar(artista);
+            if (artistaDAO.existePorNombreYTipo(artista.getNombre(), artista.getTipo())) {
+                throw new DuplicadoException("Ya existe el artista '" + artista.getNombre() + "'");
+            }
+        }
+
+        // Inserción masiva
+        try {
+            artistaDAO.crearMuchos(artistas);
+        } catch (LlaveDuplicadaException e) {
+            throw new DuplicadoException("Error de duplicados al registrar el lote.");
+        }
+    }
 }

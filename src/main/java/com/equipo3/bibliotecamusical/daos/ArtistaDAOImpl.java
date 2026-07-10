@@ -109,4 +109,14 @@ public class ArtistaDAOImpl implements IArtistaDAO {
                 eq("_id", artistaId),
                 Updates.pull("integrantes", new Document("nombreCompleto", nombreCompleto))));
     }
+    @Override
+    public void crearMuchos(List<Artista> artistas) {
+        if (artistas == null || artistas.isEmpty()) {
+            return;
+        }
+        OperacionesMongo.ejecutar(() -> {
+            coleccion.insertMany(artistas);
+            return null; // OperacionesMongo.ejecutar espera un retorno; devolvemos null al ser void
+        });
+    }
 }
