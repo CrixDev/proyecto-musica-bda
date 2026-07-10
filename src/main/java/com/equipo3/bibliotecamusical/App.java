@@ -13,7 +13,7 @@ public final class App {
     private App() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {    
         System.out.println("Biblioteca Musical - Equipo 3");
         System.out.println("Backend CRUD (Fases 1-6). La interfaz grafica llega en la Fase 7.");
         System.out.println("Para una demostracion del CRUD ejecuta la clase RunnerCrud:");

@@ -15,5 +15,5 @@ public record ArtistaDTO(
         String imagen,
         String genero,
         LocalDate fechaCreacion,
-        List<IntegranteDTO> integrantes) {
+        List<IntegranteDTO> integrantes){
 }

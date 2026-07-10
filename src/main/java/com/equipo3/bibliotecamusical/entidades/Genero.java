@@ -33,7 +33,7 @@ public enum Genero {
     CUMBIA("Cumbia"),
     BALADA("Balada"),
     CORRIDOS("Corridos");
-
+    
     private final String nombre;
 
     Genero(String nombre) {

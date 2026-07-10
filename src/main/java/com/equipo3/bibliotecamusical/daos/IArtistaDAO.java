@@ -36,4 +36,6 @@ public interface IArtistaDAO {
     void agregarIntegrante(ObjectId artistaId, Integrante integrante);
 
     void eliminarIntegrante(ObjectId artistaId, String nombreCompleto);
+    
+    void crearMuchos(List<Artista> artistas);
 }
