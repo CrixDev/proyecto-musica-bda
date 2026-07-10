@@ -23,6 +23,13 @@ public interface IArtistaDAO {
     /** Busqueda parcial e insensible a mayusculas por nombre. */
     List<Artista> buscarPorNombre(String texto);
 
+    /**
+     * Busqueda parcial e insensible a mayusculas que ademas de coincidir con el
+     * nombre del artista/banda, coincide con el nombre de alguno de sus
+     * integrantes o con su genero. Sostiene el buscador global de la app.
+     */
+    List<Artista> buscarPorTexto(String texto);
+
     boolean existePorNombreYTipo(String nombre, TipoArtista tipo);
 
     Artista actualizar(Artista artista);

@@ -24,6 +24,12 @@ public interface IAlbumDAO {
 
     List<Album> buscarPorNombre(String texto);
 
+    /**
+     * Busqueda parcial e insensible a mayusculas que coincide con el nombre del
+     * album o con el nombre de alguna de sus canciones embebidas.
+     */
+    List<Album> buscarPorTexto(String texto);
+
     boolean existeAlbumDeArtista(ObjectId artistaId, String nombre);
 
     long contarPorArtista(ObjectId artistaId);

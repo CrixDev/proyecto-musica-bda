@@ -1,23 +1,50 @@
 package com.equipo3.bibliotecamusical;
 
+import com.equipo3.bibliotecamusical.negocio.Servicios;
+import com.equipo3.bibliotecamusical.persistencia.ConexionMongo;
+import com.equipo3.bibliotecamusical.persistencia.InicializadorBd;
+import com.equipo3.bibliotecamusical.presentacion.VentanaPrincipal;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
 /**
  * Punto de entrada de la aplicacion Biblioteca Musical.
  *
- * <p>En el alcance actual (Fases 1-6, CRUD backend sin interfaz grafica) este
- * main solo informa como ejercitar el CRUD. La interfaz Swing se conecta aqui
- * en la Fase 7. Para probar el CRUD extremo a extremo se usa
- * {@link com.equipo3.bibliotecamusical.presentacion.RunnerCrud}.
+ * <p>Arranca el proceso completo: verifica MongoDB, prepara las colecciones,
+ * construye los servicios y abre la interfaz grafica empezando por un login
+ * <b>simulado</b> (el login real contra la BD queda pendiente). Desde ahi se
+ * navega a todas las pantallas ya conectadas: Inicio, Artistas, Albumes,
+ * detalle de artista/album, Perfil y Favoritos.
  */
 public final class App {
 
     private App() {
     }
 
-    public static void main(String[] args) {    
-        System.out.println("Biblioteca Musical - Equipo 3");
-        System.out.println("Backend CRUD (Fases 1-6). La interfaz grafica llega en la Fase 7.");
-        System.out.println("Para una demostracion del CRUD ejecuta la clase RunnerCrud:");
-        System.out.println("  mvn -q compile exec:java "
-                + "-Dexec.mainClass=com.equipo3.bibliotecamusical.presentacion.RunnerCrud");
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(App::iniciar);
+    }
+
+    private static void iniciar() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ignored) {
+            // Si falla, se usa el look and feel por defecto.
+        }
+
+        if (!ConexionMongo.disponible()) {
+            JOptionPane.showMessageDialog(null,
+                    "MongoDB no está disponible en localhost:27017.\n"
+                    + "Inicia el servidor de MongoDB (o abre MongoDB Compass y conéctate)\n"
+                    + "y vuelve a ejecutar la aplicación.",
+                    "Biblioteca Musical", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        InicializadorBd.inicializar(ConexionMongo.getBaseDatos());
+        Servicios servicios = new Servicios(ConexionMongo.getBaseDatos());
+
+        VentanaPrincipal.mostrarLoginSimulado(servicios);
     }
 }

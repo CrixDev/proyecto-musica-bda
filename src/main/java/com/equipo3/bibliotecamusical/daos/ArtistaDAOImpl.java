@@ -72,6 +72,18 @@ public class ArtistaDAOImpl implements IArtistaDAO {
     }
 
     @Override
+    public List<Artista> buscarPorTexto(String texto) {
+        return OperacionesMongo.ejecutar(() -> {
+            String patron = Pattern.quote(texto);
+            return coleccion.find(Filters.or(
+                    Filters.regex("nombre", patron, "i"),
+                    Filters.regex("integrantes.nombreCompleto", patron, "i"),
+                    Filters.regex("genero", patron, "i")))
+                    .into(new ArrayList<>());
+        });
+    }
+
+    @Override
     public boolean existePorNombreYTipo(String nombre, TipoArtista tipo) {
         return OperacionesMongo.ejecutar(() -> coleccion.countDocuments(
                 and(eq("nombre", nombre), eq("tipo", tipo.getClave())),

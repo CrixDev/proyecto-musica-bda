@@ -80,6 +80,17 @@ public class AlbumDAOImpl implements IAlbumDAO {
     }
 
     @Override
+    public List<Album> buscarPorTexto(String texto) {
+        return OperacionesMongo.ejecutar(() -> {
+            String patron = Pattern.quote(texto);
+            return coleccion.find(Filters.or(
+                    Filters.regex("nombre", patron, "i"),
+                    Filters.regex("canciones.nombre", patron, "i")))
+                    .into(new ArrayList<>());
+        });
+    }
+
+    @Override
     public boolean existeAlbumDeArtista(ObjectId artistaId, String nombre) {
         return OperacionesMongo.ejecutar(() -> coleccion.countDocuments(
                 and(eq("artistaId", artistaId), eq("nombre", nombre)),

@@ -10,6 +10,8 @@ import com.equipo3.bibliotecamusical.negocio.seguridad.SesionActual;
 import com.equipo3.bibliotecamusical.negocio.servicios.AlbumService;
 import com.equipo3.bibliotecamusical.negocio.servicios.ArtistaService;
 import com.equipo3.bibliotecamusical.negocio.servicios.AutenticacionService;
+import com.equipo3.bibliotecamusical.negocio.servicios.BusquedaService;
+import com.equipo3.bibliotecamusical.negocio.servicios.CargaMasivaService;
 import com.equipo3.bibliotecamusical.negocio.servicios.UsuarioService;
 import com.mongodb.client.MongoDatabase;
 
@@ -24,17 +26,21 @@ public class Servicios {
     private final UsuarioService usuarios;
     private final ArtistaService artistas;
     private final AlbumService albumes;
+    private final BusquedaService busqueda;
+    private final CargaMasivaService cargaMasiva;
 
     public Servicios(MongoDatabase db) {
         IUsuarioDAO usuarioDAO = new UsuarioDAOImpl(db);
         IArtistaDAO artistaDAO = new ArtistaDAOImpl(db);
         IAlbumDAO albumDAO = new AlbumDAOImpl(db);
 
-        
+
         this.autenticacion = new AutenticacionService(usuarioDAO);
         this.usuarios = new UsuarioService(usuarioDAO);
         this.artistas = new ArtistaService(artistaDAO, albumDAO);
         this.albumes = new AlbumService(albumDAO, artistaDAO);
+        this.busqueda = new BusquedaService(artistaDAO, albumDAO);
+        this.cargaMasiva = new CargaMasivaService(this.artistas, albumDAO);
     }
 
    
@@ -52,5 +58,13 @@ public class Servicios {
 
     public AlbumService albumes() {
         return albumes;
+    }
+
+    public BusquedaService busqueda() {
+        return busqueda;
+    }
+
+    public CargaMasivaService cargaMasiva() {
+        return cargaMasiva;
     }
 }
